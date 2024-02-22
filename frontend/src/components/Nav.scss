@@ -1,0 +1,17 @@
+nav {
+    width: 150px;
+    height: 100vh;
+    position: sticky;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    color: var(--white-violet);
+
+    // a {
+    //     padding: 10px 30px;
+    // }
+    // a.active {
+    //     background-color: var(--medium-violet);
+    // }
+}

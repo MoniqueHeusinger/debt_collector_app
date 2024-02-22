@@ -1,0 +1,174 @@
+.p-1 {
+    padding: 1rem;
+}
+
+.dashboard-overview-grid-wrapper {
+    margin-inline: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    color: var(--midnight-violet);
+
+    .dashboard-overview-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        // Overview-Link-Container
+        // ====================================
+        .dashboard-overview-nav-container {
+            display: flex;
+            gap: 32px;
+            justify-content: flex-start;
+
+            a {
+                display: inline-block;
+                padding: 10px 20px 10px 3px;
+                font-weight: bold;
+                border-bottom: 4px solid transparent;
+                position: relative;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    transform: scaleX(0);
+
+                    height: 5px;
+                    bottom: 0;
+                    left: 0;
+                    background: var(--medium-violet);
+                    transform-origin: left;
+                    transition: transform 0.4s ease-out;
+                }
+                &:hover::after {
+                    transform: scaleX(1);
+                    transform-origin: left;
+                }
+            }
+        }
+
+        // Button-Container
+        .dashboard-overview-btn-container {
+            padding-right: 5px;
+        }
+    }
+
+    .dashboard-overview-content-container {
+        margin-top: 12px;
+        padding-bottom: 32px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-template-rows: 180px;
+        gap: 32px;
+        border-bottom: 1px dotted var(--midnight-violet);
+
+        .overview-content-card {
+            padding: 10px;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 25% 50% 25%;
+            background-color: white;
+            box-shadow: 4px 7px 16px -4px rgba(112, 112, 112, 1);
+            transition: 0.3s;
+            border-bottom: 10px solid var(--light-violet);
+
+            &:hover {
+                transform: scale(1.06);
+                cursor: pointer;
+            }
+
+            h3 {
+                color: var(--pale-midnight-violet);
+            }
+
+            p {
+                font-size: 1.2rem;
+
+                &:nth-of-type(1) {
+                    font-family: "RussoOne";
+                    font-size: 2rem;
+                }
+
+                &:nth-of-type(2) {
+                    color: var(--pale-midnight-violet);
+                    font-size: 1rem;
+
+                    .percentage-grow {
+                        padding-right: 5px;
+                        color: rgb(1, 183, 1);
+                        font-size: 1.2rem;
+                        font-weight: 900;
+                    }
+
+                    .percentage-shrink {
+                        padding-right: 5px;
+                        color: red;
+                        font-size: 1.2rem;
+                        font-weight: 900;
+                    }
+                }
+            }
+        }
+    }
+
+    // Lower Container: Dues + new loan
+    // ====================================
+    .dues-and-new-loan-container {
+        // margin-top: 24px;
+        display: flex;
+        gap: 32px;
+
+        .dues-container {
+            flex-basis: 70%;
+            border-right: 1px dotted var(--midnight-violet);
+
+            .dues-content {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(100px, 200px));
+                gap: 24px;
+
+                .dues-card {
+                    padding: 10px;
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    grid-template-rows: repeat(3, 40px);
+                    align-items: center;
+                    background-color: white;
+                    box-shadow: 4px 7px 16px -4px rgba(112, 112, 112, 1);
+                    transition: 0.3s;
+                    border-bottom: 10px solid var(--medium-violet);
+
+                    h3 {
+                        color: var(--pale-midnight-violet);
+                    }
+                    p:nth-of-type(2) {
+                        font-family: "RussoOne";
+                        font-size: 1.3rem;
+                    }
+
+                    &:hover {
+                        transform: scale(1.06);
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+
+        .new-loan-container {
+            margin-top: 24px;
+            background-color: var(--dark-violet);
+            display: flex;
+            align-items: center;
+            flex-grow: 1;
+            justify-content: center;
+            color: var(--white-violet);
+            font-weight: 600;
+            transition: 0.3s;
+
+            &:hover {
+                background-color: var(--light-violet);
+                color: var(--midnight-violet);
+            }
+        }
+    }
+}

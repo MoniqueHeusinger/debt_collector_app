@@ -1,0 +1,183 @@
+<mxfile host="app.diagrams.net" modified="2024-02-21T11:17:45.230Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36" etag="5fXycGd0PbnEFKdiozlw" version="23.1.5" type="device">
+  <diagram name="Seite-1" id="VaiTZpRZpuRQC8QZSpIK">
+    <mxGraphModel dx="2488" dy="1845" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="CROHcQFq3MsIkwvhIXYN-1" value="Dashboard&amp;nbsp;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;GET /api/kredite" style="swimlane;whiteSpace=wrap;html=1;fillColor=#6a00ff;fontColor=#ffffff;strokeColor=#3700CC;" parent="1" vertex="1">
+          <mxGeometry x="20" y="20" width="520" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="CROHcQFq3MsIkwvhIXYN-3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#6a00ff;fontColor=#ffffff;strokeColor=#3700CC;" parent="CROHcQFq3MsIkwvhIXYN-1" vertex="1">
+          <mxGeometry x="10" y="40" width="480" height="350" as="geometry" />
+        </mxCell>
+        <mxCell id="CROHcQFq3MsIkwvhIXYN-2" value="Nav" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#6a00ff;fontColor=#ffffff;strokeColor=#ffffff;strokeWidth=2;" parent="CROHcQFq3MsIkwvhIXYN-1" vertex="1">
+          <mxGeometry x="10" y="40" width="50" height="350" as="geometry" />
+        </mxCell>
+        <mxCell id="CROHcQFq3MsIkwvhIXYN-5" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=none;" parent="CROHcQFq3MsIkwvhIXYN-1" vertex="1">
+          <mxGeometry x="60" y="45" width="426" height="340" as="geometry" />
+        </mxCell>
+        <mxCell id="CROHcQFq3MsIkwvhIXYN-7" value="verliehenes Kapital (Stand heute)" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#E2D8FF;fillColor=#6a00ff;fontColor=#ffffff;" parent="CROHcQFq3MsIkwvhIXYN-1" vertex="1">
+          <mxGeometry x="70" y="225" width="400" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CROHcQFq3MsIkwvhIXYN-13" value="Anzahl Kreditnehmer&lt;br&gt;(aktuell)" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#E2D8FF;fillColor=#6a00ff;fontColor=#ffffff;align=left;" parent="CROHcQFq3MsIkwvhIXYN-1" vertex="1">
+          <mxGeometry x="210" y="260" width="260" height="83" as="geometry" />
+        </mxCell>
+        <mxCell id="CROHcQFq3MsIkwvhIXYN-14" value="Willkommen auf deinem Dashboard, Justus!" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontFamily=Helvetica;fontColor=default;fontStyle=1" parent="CROHcQFq3MsIkwvhIXYN-1" vertex="1">
+          <mxGeometry x="70" y="90" width="240" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CROHcQFq3MsIkwvhIXYN-19" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn4.iconfinder.com/data/icons/aiga-symbol-signs/441/aiga_cashier-128.png;fontFamily=Helvetica;fontSize=11;fontColor=default;imageBackground=#FFFF00;" parent="CROHcQFq3MsIkwvhIXYN-1" vertex="1">
+          <mxGeometry x="70" y="50" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CROHcQFq3MsIkwvhIXYN-33" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn4.iconfinder.com/data/icons/aiga-symbol-signs/441/aiga_cashier-128.png;fontFamily=Helvetica;fontSize=11;fontColor=default;imageBackground=#FFFF00;" parent="CROHcQFq3MsIkwvhIXYN-1" vertex="1">
+          <mxGeometry x="100" y="50" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CROHcQFq3MsIkwvhIXYN-34" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn4.iconfinder.com/data/icons/aiga-symbol-signs/441/aiga_cashier-128.png;fontFamily=Helvetica;fontSize=11;fontColor=default;imageBackground=#FFFF00;" parent="CROHcQFq3MsIkwvhIXYN-1" vertex="1">
+          <mxGeometry x="190" y="50" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CROHcQFq3MsIkwvhIXYN-35" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn4.iconfinder.com/data/icons/aiga-symbol-signs/441/aiga_cashier-128.png;fontFamily=Helvetica;fontSize=11;fontColor=default;imageBackground=#FFFF00;" parent="CROHcQFq3MsIkwvhIXYN-1" vertex="1">
+          <mxGeometry x="160" y="50" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CROHcQFq3MsIkwvhIXYN-36" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn4.iconfinder.com/data/icons/aiga-symbol-signs/441/aiga_cashier-128.png;fontFamily=Helvetica;fontSize=11;fontColor=default;imageBackground=#FFFF00;" parent="CROHcQFq3MsIkwvhIXYN-1" vertex="1">
+          <mxGeometry x="130" y="50" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CROHcQFq3MsIkwvhIXYN-37" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn4.iconfinder.com/data/icons/aiga-symbol-signs/441/aiga_cashier-128.png;fontFamily=Helvetica;fontSize=11;fontColor=default;imageBackground=#FFFF00;" parent="CROHcQFq3MsIkwvhIXYN-1" vertex="1">
+          <mxGeometry x="220" y="50" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CROHcQFq3MsIkwvhIXYN-40" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn4.iconfinder.com/data/icons/aiga-symbol-signs/441/aiga_cashier-128.png;fontFamily=Helvetica;fontSize=11;fontColor=default;imageBackground=#FFFF00;" parent="CROHcQFq3MsIkwvhIXYN-1" vertex="1">
+          <mxGeometry x="250" y="50" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CROHcQFq3MsIkwvhIXYN-41" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn4.iconfinder.com/data/icons/aiga-symbol-signs/441/aiga_cashier-128.png;fontFamily=Helvetica;fontSize=11;fontColor=default;imageBackground=#FFFF00;" parent="CROHcQFq3MsIkwvhIXYN-1" vertex="1">
+          <mxGeometry x="280" y="50" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CROHcQFq3MsIkwvhIXYN-42" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn4.iconfinder.com/data/icons/aiga-symbol-signs/441/aiga_cashier-128.png;fontFamily=Helvetica;fontSize=11;fontColor=default;imageBackground=#FFFF00;" parent="CROHcQFq3MsIkwvhIXYN-1" vertex="1">
+          <mxGeometry x="310" y="50" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CROHcQFq3MsIkwvhIXYN-43" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn4.iconfinder.com/data/icons/aiga-symbol-signs/441/aiga_cashier-128.png;fontFamily=Helvetica;fontSize=11;fontColor=default;imageBackground=#FFFF00;" parent="CROHcQFq3MsIkwvhIXYN-1" vertex="1">
+          <mxGeometry x="340" y="50" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CROHcQFq3MsIkwvhIXYN-44" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn4.iconfinder.com/data/icons/aiga-symbol-signs/441/aiga_cashier-128.png;fontFamily=Helvetica;fontSize=11;fontColor=default;imageBackground=#FFFF00;" parent="CROHcQFq3MsIkwvhIXYN-1" vertex="1">
+          <mxGeometry x="370" y="50" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CROHcQFq3MsIkwvhIXYN-45" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn4.iconfinder.com/data/icons/aiga-symbol-signs/441/aiga_cashier-128.png;fontFamily=Helvetica;fontSize=11;fontColor=default;imageBackground=#FFFF00;" parent="CROHcQFq3MsIkwvhIXYN-1" vertex="1">
+          <mxGeometry x="430" y="50" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CROHcQFq3MsIkwvhIXYN-18" value="" style="group;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" parent="CROHcQFq3MsIkwvhIXYN-1" vertex="1" connectable="0">
+          <mxGeometry x="430" y="60" width="50" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="CROHcQFq3MsIkwvhIXYN-15" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontFamily=Helvetica;fontSize=11;fontColor=#ffffff;fillColor=#60a917;strokeColor=#2D7600;" parent="CROHcQFq3MsIkwvhIXYN-18" vertex="1">
+          <mxGeometry x="5" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="CROHcQFq3MsIkwvhIXYN-16" value="" style="shape=actor;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=#ffffff;fillColor=#60a917;strokeColor=#2D7600;" parent="CROHcQFq3MsIkwvhIXYN-18" vertex="1">
+          <mxGeometry x="15.629999999999999" y="10" width="18.75" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="CROHcQFq3MsIkwvhIXYN-56" value="+ neuen Kredit hinzufügen" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#E2D8FF;fillColor=#6a00ff;fontColor=#ffffff;" parent="CROHcQFq3MsIkwvhIXYN-1" vertex="1">
+          <mxGeometry x="70" y="350" width="400" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CROHcQFq3MsIkwvhIXYN-71" value="Familienvermögen&lt;br&gt;&lt;br&gt;2.145.760,00 €" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#E2D8FF;fillColor=#6a00ff;fontColor=#ffffff;align=left;" parent="CROHcQFq3MsIkwvhIXYN-1" vertex="1">
+          <mxGeometry x="70" y="120" width="400" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="CROHcQFq3MsIkwvhIXYN-73" value="Umsatz diesen Monat" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#56517e;fillColor=#d0cee2;" parent="CROHcQFq3MsIkwvhIXYN-1" vertex="1">
+          <mxGeometry x="270" y="130" width="90" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="CROHcQFq3MsIkwvhIXYN-74" value="Umsatz dieses Jahr" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#56517e;fillColor=#d0cee2;" parent="CROHcQFq3MsIkwvhIXYN-1" vertex="1">
+          <mxGeometry x="370" y="130" width="90" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="CROHcQFq3MsIkwvhIXYN-75" value="aktuell vergebene Kredite&lt;br&gt;(Anzahl + Höhe)" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#E2D8FF;fillColor=#6a00ff;fontColor=#ffffff;" parent="CROHcQFq3MsIkwvhIXYN-1" vertex="1">
+          <mxGeometry x="70" y="260" width="130" height="83" as="geometry" />
+        </mxCell>
+        <mxCell id="CROHcQFq3MsIkwvhIXYN-70" value="Kreditnehmer im Rückstand" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#56517e;fillColor=#d0cee2;" parent="CROHcQFq3MsIkwvhIXYN-1" vertex="1">
+          <mxGeometry x="355" y="269" width="105" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="CROHcQFq3MsIkwvhIXYN-9" value="Kredite&lt;br&gt;&lt;br&gt;Kreditnehmer&lt;br&gt;&lt;br&gt;neuer Kredit&lt;br&gt;&lt;br&gt;&lt;br&gt;Login/Logout" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+          <mxGeometry x="-120" y="147.5" width="90" height="175" as="geometry" />
+        </mxCell>
+        <mxCell id="CROHcQFq3MsIkwvhIXYN-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;" parent="1" source="CROHcQFq3MsIkwvhIXYN-2" target="CROHcQFq3MsIkwvhIXYN-9" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CROHcQFq3MsIkwvhIXYN-12" value="" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=default;strokeColor=default;strokeWidth=2;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;endArrow=classic;" parent="1" source="CROHcQFq3MsIkwvhIXYN-11" target="CROHcQFq3MsIkwvhIXYN-9" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CROHcQFq3MsIkwvhIXYN-11" value="Grid:&lt;br&gt;column: 1&lt;br&gt;row: 10% 10% ..." style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;fontFamily=Helvetica;fontSize=11;fontColor=default;" parent="1" vertex="1">
+          <mxGeometry x="-120" y="360" width="90" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="CROHcQFq3MsIkwvhIXYN-46" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn4.iconfinder.com/data/icons/aiga-symbol-signs/441/aiga_cashier-128.png;fontFamily=Helvetica;fontSize=11;fontColor=default;imageBackground=#FFFF00;" parent="1" vertex="1">
+          <mxGeometry x="420" y="70" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CROHcQFq3MsIkwvhIXYN-50" value="POST" style="swimlane;horizontal=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=#ffffff;fillColor=#d80073;strokeColor=#A50040;" parent="1" vertex="1">
+          <mxGeometry x="230" y="430" width="235.63" height="73" as="geometry" />
+        </mxCell>
+        <mxCell id="shcvk0ubFE24JTCacpWB-14" value="" style="sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;align=center;fillColor=#2D9C5E;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.check;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" vertex="1" parent="CROHcQFq3MsIkwvhIXYN-50">
+          <mxGeometry x="135.63" y="-7" width="100" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="CROHcQFq3MsIkwvhIXYN-51" value="/api/v1/loans" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontFamily=Helvetica;fontColor=default;" parent="1" vertex="1">
+          <mxGeometry x="260" y="448" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CROHcQFq3MsIkwvhIXYN-52" value="GET" style="swimlane;horizontal=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=#ffffff;fillColor=#60a917;strokeColor=#2D7600;" parent="1" vertex="1">
+          <mxGeometry x="590" y="40" width="250" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="shcvk0ubFE24JTCacpWB-3" value="/api/v1/loans" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontFamily=Helvetica;fontColor=default;" vertex="1" parent="CROHcQFq3MsIkwvhIXYN-52">
+          <mxGeometry x="35" y="15" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="shcvk0ubFE24JTCacpWB-12" value="" style="sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;align=center;fillColor=#2D9C5E;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.check;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" vertex="1" parent="CROHcQFq3MsIkwvhIXYN-52">
+          <mxGeometry x="150" y="-37.5" width="100" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="CROHcQFq3MsIkwvhIXYN-54" value="GET" style="swimlane;horizontal=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=#ffffff;fillColor=#60a917;strokeColor=#2D7600;" parent="1" vertex="1">
+          <mxGeometry x="590" y="260" width="250" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="shcvk0ubFE24JTCacpWB-5" value="/api/v1/debtors" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontFamily=Helvetica;fontColor=default;" vertex="1" parent="CROHcQFq3MsIkwvhIXYN-54">
+          <mxGeometry x="40" y="15" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="shcvk0ubFE24JTCacpWB-13" value="" style="sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;align=center;fillColor=#2D9C5E;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.check;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" vertex="1" parent="CROHcQFq3MsIkwvhIXYN-54">
+          <mxGeometry x="150" y="-51" width="100" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="CROHcQFq3MsIkwvhIXYN-63" value="&lt;h1&gt;Entities&lt;/h1&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontFamily=Helvetica;fontColor=default;fontStyle=4" parent="1" vertex="1">
+          <mxGeometry x="-420" y="10" width="143" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="shcvk0ubFE24JTCacpWB-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;" edge="1" parent="1" source="CROHcQFq3MsIkwvhIXYN-64" target="CROHcQFq3MsIkwvhIXYN-67">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CROHcQFq3MsIkwvhIXYN-64" value="Loan" style="swimlane;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=#000000;fillColor=#f0a30a;strokeColor=#BD7000;" parent="1" vertex="1">
+          <mxGeometry x="-420" y="60" width="265" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="CROHcQFq3MsIkwvhIXYN-65" value="- ID (mongoose.ObjectId),&lt;br&gt;- payoutDate: date,&lt;br&gt;- amount: number,&lt;br&gt;- installment: number, (Raten)&lt;br&gt;- interestRate: number, (Zinsen)&lt;br&gt;- term: number (1-12)&lt;br&gt;- debtor: debtorSchema&lt;br&gt;- paidOff: boolean" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=11;fontFamily=Helvetica;fontColor=default;" parent="CROHcQFq3MsIkwvhIXYN-64" vertex="1">
+          <mxGeometry x="12" y="40" width="178" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="CROHcQFq3MsIkwvhIXYN-66" value="&lt;u&gt;Beispiel:&lt;/u&gt;&lt;br&gt;&lt;br&gt;15.01.2024&lt;br&gt;5.000 €&lt;br&gt;200 €&lt;br&gt;10%&lt;br&gt;6 months" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontFamily=Helvetica;fontColor=default;" parent="CROHcQFq3MsIkwvhIXYN-64" vertex="1">
+          <mxGeometry x="190" y="22.5" width="65" height="115" as="geometry" />
+        </mxCell>
+        <mxCell id="shcvk0ubFE24JTCacpWB-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.25;entryY=1;entryDx=0;entryDy=0;strokeColor=default;strokeWidth=2;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=classic;" edge="1" parent="1" source="CROHcQFq3MsIkwvhIXYN-67" target="CROHcQFq3MsIkwvhIXYN-64">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-354" y="290" />
+              <mxPoint x="-354" y="290" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CROHcQFq3MsIkwvhIXYN-67" value="Debtor" style="swimlane;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=#000000;fillColor=#f0a30a;strokeColor=#BD7000;" parent="1" vertex="1">
+          <mxGeometry x="-420" y="310" width="265" height="227.5" as="geometry" />
+        </mxCell>
+        <mxCell id="CROHcQFq3MsIkwvhIXYN-68" value="- ID (mongoose.ObjectId),&lt;br&gt;- name: string,&lt;br&gt;- birthday: date,&lt;br&gt;- address: {city, street, zip, country},&lt;br&gt;- phone: string,&lt;br&gt;- email: string,&lt;br&gt;- maritalStatus: enum (single, married, divorced, widowed),&lt;br&gt;- children: boolean,&lt;br&gt;- employer: string,&lt;br&gt;- annualSalary: number,&lt;br&gt;- loanHistory: [{&lt;font color=&quot;#ff3333&quot;&gt;loan_id, paidOff: false}, {loan_id, paidOff: true}]&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=11;fontFamily=Helvetica;fontColor=default;" parent="CROHcQFq3MsIkwvhIXYN-67" vertex="1">
+          <mxGeometry x="12" y="40" width="218" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="CROHcQFq3MsIkwvhIXYN-76" value="User (für Web app)" style="swimlane;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=#000000;fillColor=#f0a30a;strokeColor=#BD7000;" parent="1" vertex="1">
+          <mxGeometry x="-420" y="585" width="265" height="172" as="geometry" />
+        </mxCell>
+        <mxCell id="CROHcQFq3MsIkwvhIXYN-77" value="- ID (mongoose.ObjectId),&lt;br&gt;- firstname, lastname: string&lt;br&gt;- email: string,&lt;br&gt;- pwhash,&lt;br&gt;- pwSalt,&lt;br&gt;- sixDigitCode,&lt;br&gt;- emailVerified,&lt;br&gt;- userRole: enum [&quot;admin&quot;, &quot;editor&quot;]" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=11;fontFamily=Helvetica;fontColor=default;" parent="CROHcQFq3MsIkwvhIXYN-76" vertex="1">
+          <mxGeometry x="12" y="40" width="218" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="shcvk0ubFE24JTCacpWB-7" value="PATCH" style="swimlane;horizontal=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=#ffffff;fillColor=#1ba1e2;strokeColor=#006EAF;" vertex="1" parent="1">
+          <mxGeometry x="590" y="120" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="shcvk0ubFE24JTCacpWB-8" value="/api/v1/loans" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontFamily=Helvetica;fontColor=default;" vertex="1" parent="shcvk0ubFE24JTCacpWB-7">
+          <mxGeometry x="35" y="15" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="shcvk0ubFE24JTCacpWB-9" value="PATCH" style="swimlane;horizontal=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=#ffffff;fillColor=#1ba1e2;strokeColor=#006EAF;" vertex="1" parent="1">
+          <mxGeometry x="590" y="340" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="shcvk0ubFE24JTCacpWB-10" value="/api/v1/debtors" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontFamily=Helvetica;fontColor=default;" vertex="1" parent="shcvk0ubFE24JTCacpWB-9">
+          <mxGeometry x="35" y="15" width="100" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
