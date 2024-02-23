@@ -1,0 +1,67 @@
+.loan-card-container {
+    margin: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+
+    .loan-card {
+        padding: 10px;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 50px 60px 50px;
+        background-color: white;
+        border-bottom: 10px solid var(--medium-violet);
+        box-shadow: 4px 7px 16px -4px rgba(112, 112, 112, 1);
+        font-family: "RussoOne";
+        text-align: center;
+        transition: 0.3s;
+
+        &:hover {
+            transform: scale(1.06);
+            cursor: pointer;
+        }
+
+        .loan-amount {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            color: var(--white-violet);
+            background-color: var(--medium-violet);
+        }
+        .loan-debtor-name {
+            font-size: 1.3rem;
+            color: var(--pale-midnight-violet);
+            align-self: center;
+        }
+        // .loan-date {
+        // }
+        .paidOff-container {
+            display: flex;
+            align-items: center;
+            align-self: end;
+            font-family: "NotoSans";
+
+            .loan-paid-status {
+                flex-basis: 50%;
+                font-weight: 600;
+                border-right: 1px dotted var(--midnight-violet);
+            }
+
+            .not-paid-red {
+                color: red;
+            }
+
+            .paid-green {
+                color: rgb(1, 183, 1);
+            }
+            .loan-unpaid-installments {
+                flex-grow: 1;
+                & > span {
+                    display: block;
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+}

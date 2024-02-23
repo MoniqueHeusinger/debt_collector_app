@@ -10,7 +10,7 @@ const MONGODB_URL = process.env.MONGODB_URL;
 const app = express();
 
 // Server setup
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 4010;
 const serverListenToPort = () =>
   app.listen(PORT, () => console.log("Server listening on port: ", PORT));
 

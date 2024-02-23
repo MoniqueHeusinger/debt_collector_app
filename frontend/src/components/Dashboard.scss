@@ -70,11 +70,20 @@
             background-color: white;
             box-shadow: 4px 7px 16px -4px rgba(112, 112, 112, 1);
             transition: 0.3s;
-            border-bottom: 10px solid var(--light-violet);
 
             &:hover {
                 transform: scale(1.06);
                 cursor: pointer;
+            }
+
+            &:nth-child(2) {
+                border-bottom: 10px solid var(--medium-violet);
+            }
+            &:nth-child(3) {
+                border-bottom: 10px solid var(--light-violet);
+            }
+            &:nth-child(1) {
+                border-bottom: 10px solid var(--dark-violet);
             }
 
             h3 {
@@ -122,6 +131,10 @@
             flex-basis: 70%;
             border-right: 1px dotted var(--midnight-violet);
 
+            h2 {
+                margin-left: 0px;
+            }
+
             .dues-content {
                 display: grid;
                 grid-template-columns: repeat(auto-fit, minmax(100px, 200px));
@@ -136,7 +149,17 @@
                     background-color: white;
                     box-shadow: 4px 7px 16px -4px rgba(112, 112, 112, 1);
                     transition: 0.3s;
-                    border-bottom: 10px solid var(--medium-violet);
+                    border-bottom: 10px solid var(--midnight-violet);
+
+                    // &:nth-child(1) {
+                    //     border-bottom: 10px solid var(--light-violet);
+                    // }
+                    // &:nth-child(2) {
+                    //     border-bottom: 10px solid var(--dark-violet);
+                    // }
+                    // &:nth-child(3) {
+                    //     border-bottom: 10px solid var(--light-violet);
+                    // }
 
                     h3 {
                         color: var(--pale-midnight-violet);
@@ -154,6 +177,7 @@
             }
         }
 
+        // Button: new loan
         .new-loan-container {
             margin-top: 24px;
             background-color: var(--dark-violet);
@@ -163,6 +187,7 @@
             justify-content: center;
             color: var(--white-violet);
             font-weight: 600;
+            font-size: 1.2rem;
             transition: 0.3s;
 
             &:hover {

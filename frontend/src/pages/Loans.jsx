@@ -2,11 +2,12 @@ import { useEffect, useState } from "react";
 import Nav from "../components/Nav";
 import { backendURL } from "../api";
 import LoanCard from "../components/LoanCard";
+import "./Loans.scss";
 
 const Loans = () => {
   const [allLoans, setAllLoans] = useState([]);
 
-  // Alle Kredite
+  // All loans fetch
   useEffect(() => {
     async function fetchAllLoans() {
       try {
@@ -32,18 +33,20 @@ const Loans = () => {
         </section>
 
         <section className="main-content-grid">
-          <h2>Alle Kredite:</h2>
-
-          {allLoans.map((loan) => (
-            <LoanCard
-              key={loan._id}
-              _id={loan._id}
-              amount={loan.amount}
-              installment={loan.installment}
-              term={loan.term}
-              paidOff={loan.paidOff}
-            />
-          ))}
+          <div className="loan-card-container">
+            {allLoans.map((loan) => (
+              <LoanCard
+                key={loan._id}
+                _id={loan._id}
+                amount={loan.amount}
+                installment={loan.installment}
+                term={loan.term}
+                paidOff={loan.paidOff}
+                debtor={loan.debtor}
+                payoutDate={loan.payoutDate}
+              />
+            ))}
+          </div>
         </section>
       </section>
     </>
