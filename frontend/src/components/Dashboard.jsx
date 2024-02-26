@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import "./Dashboard.scss";
 
 const Dashboard = () => {
@@ -7,10 +7,9 @@ const Dashboard = () => {
       <section className="header-grid">
         <h1>Dashboard</h1>
       </section>
-
       <section className="main-content-grid">
-        <h2>Willkommen auf deinem Dashboard, Justus!</h2>
         <section className="dashboard-overview-grid-wrapper">
+          <h2>Willkommen auf deinem Dashboard, Justus!</h2>
           <article className="dashboard-overview-container">
             <div className="dashboard-overview-nav-container">
               <NavLink>Überblick</NavLink>
@@ -72,9 +71,12 @@ const Dashboard = () => {
             </article>
 
             {/* new loan link */}
-            <a href="#" className="new-loan-container">
+            <Link to="/add-new-loan" className="new-loan-container">
               + neuer Kredit
-            </a>
+            </Link>
+            {/* <a href="#" className="new-loan-container">
+              + neuer Kredit
+            </a> */}
           </article>
         </section>
       </section>

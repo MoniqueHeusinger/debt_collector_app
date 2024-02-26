@@ -1,5 +1,5 @@
 nav {
-    width: 150px;
+    width: 120px;
     height: 100vh;
     position: sticky;
     display: flex;
@@ -8,9 +8,12 @@ nav {
     justify-content: space-evenly;
     color: var(--white-violet);
 
-    // a {
-    //     padding: 10px 30px;
-    // }
+    a {
+        // padding: 10px 30px;
+        img {
+            width: 60px;
+        }
+    }
     // a.active {
     //     background-color: var(--medium-violet);
     // }

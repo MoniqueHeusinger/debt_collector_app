@@ -62,9 +62,11 @@ body {
 
     .main-grid-structure {
         display: grid;
-        grid-template-columns: 150px auto;
+        grid-template-columns: 120px auto;
         grid-template-rows: 100px auto;
-        border: 10px solid var(--midnight-violet);
+        border-top: 10px solid var(--midnight-violet);
+        border-bottom: 10px solid var(--midnight-violet);
+        border-right: 10px solid var(--midnight-violet);
 
         .nav-grid {
             grid-column: 1 / 2;
@@ -91,9 +93,20 @@ body {
             background-color: var(--white-violet);
 
             h2 {
-                margin-left: 1.5rem;
+                // margin-left: 1.5rem;
                 color: var(--midnight-violet);
                 font-size: 1.7rem;
+            }
+
+            input::placeholder {
+                color: var(--pale-midnight-violet);
+            }
+
+            input[type="date"]:invalid::-webkit-datetime-edit {
+                color: var(--pale-midnight-violet);
+                font-family: "NotoSans";
+                letter-spacing: 1px;
+                text-transform: uppercase;
             }
         }
     }
