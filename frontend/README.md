@@ -1,8 +1,37 @@
-# React + Vite
+# "family.business" 💰
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to "family.business" - a debt collector app for the young, aspiring Justus (25, business student, spoiled brat), who wants to join the family business (lending money for a healthy portion of interest).
 
-Currently, two official plugins are available:
+He wants to use the app to:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- get an overview of the loans currently granted 🏦
+- quickly identify which debtors are in arrears with their payments 🧑‍🦱 --> ⛓️🧱⚓️ --> 🌊🐟 --> 💵
+- create new loans (and debtors) 🙆💸
+- edit or delete loans ✏️
+- keep an eye on family assets (more, more, more...) 💰💰💰
+
+🚧🚧🚧🚧 The app is currently still under construction... 🚧🚧🚧🚧
+
+If you would like to have a little insight now, you can find some screenshots down below.
+
+---
+
+This project was created as part of a coding bootcamp (fullstack development) at SuperCode GmbH.
+
+## Screenshots 📸
+
+### Dashboard:
+
+![Screenshot family.business dashboard](./src/assets/img/screenshots/dashboard-screenshot.png)
+
+### View all loans:
+
+![Screenshot family.business dashboard](./src/assets/img/screenshots/loans-screenshot.png)
+
+### Add a new loan:
+
+![Screenshot family.business dashboard](./src/assets/img/screenshots/addnewloan-screenshot.png)
+
+## Author 👩‍💻
+
+[@MoniqueHeusinger](https://github.com/MoniqueHeusinger)
