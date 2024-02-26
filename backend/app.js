@@ -2,6 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 import morgan from "morgan";
+import cors from "cors";
 import { loanRouter, debtorRouter } from "./src/routes/index.js";
 
 dotenv.config();
@@ -15,6 +16,7 @@ const serverListenToPort = () =>
   app.listen(PORT, () => console.log("Server listening on port: ", PORT));
 
 app.use(morgan("dev"));
+app.use(cors());
 app.use(express.json());
 
 // test endpoint

@@ -1,0 +1,17 @@
+// flex with direction: column
+@mixin flexColumn() {
+    display: flex;
+    flex-direction: column;
+}
+
+// grid with autofit columns 250px by default
+@mixin gridAutofit($gwmax: 250px, $gap: 32px) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, $gwmax);
+    gap: $gap;
+}
+
+// colored border bottom for cards
+@mixin coloredBorderBottom($bthick: 10px, $bstyle: solid, $bcolor: var(--medium-violet)) {
+    border-bottom: $bthick $bstyle $bcolor;
+}
