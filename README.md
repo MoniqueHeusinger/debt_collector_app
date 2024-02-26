@@ -22,15 +22,15 @@ This project was created as part of a coding bootcamp (fullstack development) at
 
 ### Dashboard:
 
-![Screenshot family.business dashboard](./src/assets/img/screenshots/dashboard-screenshot.png)
+![Screenshot family.business dashboard](./frontend/src/assets/img/screenshots/dashboard-screenshot.png)
 
 ### View all loans:
 
-![Screenshot family.business dashboard](./src/assets/img/screenshots/loans-screenshot.png)
+![Screenshot family.business dashboard](./frontend/src/assets/img/screenshots/loan-screenshot.png)
 
 ### Add a new loan:
 
-![Screenshot family.business dashboard](./src/assets/img/screenshots/addnewloan-screenshot.png)
+![Screenshot family.business dashboard](./frontend/src/assets/img/screenshots/addnewloan-screenshot.png)
 
 ## Author 👩‍💻
 
