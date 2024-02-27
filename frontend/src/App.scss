@@ -22,91 +22,95 @@
     --pale-midnight-violet: #adacba;
 }
 
-body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "NotoSans";
-    color: var(--midnight-violet);
-    background-color: var(--midnight-violet);
+html {
+    scroll-behavior: smooth;
 
-    // text styles
-    // ====================
-    a {
-        color: inherit;
-        text-decoration: none;
-    }
-
-    p {
+    body {
         margin: 0;
-    }
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "NotoSans";
+        color: var(--midnight-violet);
+        background-color: var(--midnight-violet);
 
-    h3 {
-        font-family: "RussoOne";
-        font-size: 1.2rem;
-    }
-    .btn {
-        padding: 10px 40px;
-        background-color: var(--dark-violet);
-        color: var(--white-violet);
-        font-size: 1rem;
-        font-weight: 600;
-        border: none;
-        transition: 0.3s;
-
-        &:hover {
-            background-color: var(--light-violet);
-            color: var(--midnight-violet);
-        }
-    }
-
-    .main-grid-structure {
-        display: grid;
-        grid-template-columns: 120px auto;
-        grid-template-rows: 100px auto;
-        border-top: 10px solid var(--midnight-violet);
-        border-bottom: 10px solid var(--midnight-violet);
-        border-right: 10px solid var(--midnight-violet);
-
-        .nav-grid {
-            grid-column: 1 / 2;
-            grid-row: 1 / 3;
-            background-color: var(--midnight-violet);
+        // text styles
+        // ====================
+        a {
+            color: inherit;
+            text-decoration: none;
         }
 
-        .header-grid {
-            grid-column: 2 / 3;
-            grid-row: 1 / 2;
-            background-color: var(--white-violet);
-            text-align: center;
-            font-size: 2.5rem;
+        p {
+            margin: 0;
+        }
+
+        h3 {
             font-family: "RussoOne";
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-bottom: 1px dotted var(--midnight-violet);
+            font-size: 1.2rem;
+        }
+        .btn {
+            padding: 10px 40px;
+            background-color: var(--dark-violet);
+            color: var(--white-violet);
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            transition: 0.3s;
+
+            &:hover {
+                background-color: var(--light-violet);
+                color: var(--midnight-violet);
+            }
         }
 
-        .main-content-grid {
-            grid-column: 2 / 3;
-            grid-row: 2 / 3;
-            background-color: var(--white-violet);
+        .main-grid-structure {
+            display: grid;
+            grid-template-columns: 120px auto;
+            grid-template-rows: 100px auto;
+            border-top: 10px solid var(--midnight-violet);
+            border-bottom: 10px solid var(--midnight-violet);
+            border-right: 10px solid var(--midnight-violet);
 
-            h2 {
-                // margin-left: 1.5rem;
-                color: var(--midnight-violet);
-                font-size: 1.7rem;
+            .nav-grid {
+                grid-column: 1 / 2;
+                grid-row: 1 / 3;
+                background-color: var(--midnight-violet);
             }
 
-            input::placeholder {
-                color: var(--pale-midnight-violet);
+            .header-grid {
+                grid-column: 2 / 3;
+                grid-row: 1 / 2;
+                background-color: var(--white-violet);
+                text-align: center;
+                font-size: 2.5rem;
+                font-family: "RussoOne";
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-bottom: 1px dotted var(--midnight-violet);
             }
 
-            input[type="date"]:invalid::-webkit-datetime-edit {
-                color: var(--pale-midnight-violet);
-                font-family: "NotoSans";
-                letter-spacing: 1px;
-                text-transform: uppercase;
+            .main-content-grid {
+                grid-column: 2 / 3;
+                grid-row: 2 / 3;
+                background-color: var(--white-violet);
+
+                h2 {
+                    // margin-left: 1.5rem;
+                    color: var(--midnight-violet);
+                    font-size: 1.7rem;
+                }
+
+                input::placeholder {
+                    color: var(--pale-midnight-violet);
+                }
+
+                input[type="date"]:invalid::-webkit-datetime-edit {
+                    color: var(--pale-midnight-violet);
+                    font-family: "NotoSans";
+                    letter-spacing: 1px;
+                    text-transform: uppercase;
+                }
             }
         }
     }
