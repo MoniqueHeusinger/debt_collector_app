@@ -9,16 +9,29 @@ const AddNewLoan = () => {
   const [payoutDate, setPayoutDate] = useState("");
   const [installment, setInstallment] = useState("");
   const [interestRate, setInterestRate] = useState("");
-  const [term, setTerm] = useState("");
   const [paidOff, setPaidOff] = useState(false);
-  const [debtor, setDebtor] = useState([]);
+  // const [debtor, setDebtor] = useState({ firstname: "" });
   const [firstname, setFirstname] = useState("");
+  const [lastname, setLastname] = useState("");
+  const [birthday, setBirthday] = useState("");
+  const [selectedMaritalStatus, setSelectedMaritalStatus] = useState("");
+  const [hasChildren, setHasChildren] = useState("");
+  const [city, setCity] = useState("");
+  const [street, setStreet] = useState("");
+  const [zipCode, setZipCode] = useState("");
+  const [selectedCountry, setSelectedCountry] = useState("");
+  const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
+  const [employer, setEmployer] = useState("");
+  const [annualSalary, setAnnualSalary] = useState("");
 
+  // Add Loan Function
   const addLoan = (event) => {
     event.preventDefault();
 
-    // muss noch in ein Objekt gepackt werden??!!
-    // setDebtor([...debtor, firstname]);
+    // console.log(typeof hasChildren); //string
+    // console.log(hasChildren.target); // undefined
+    // console.log(debtor);
 
     fetch(`${backendURL}/api/v1/loans`, {
       method: "POST",
@@ -27,9 +40,25 @@ const AddNewLoan = () => {
         payoutDate,
         installment,
         interestRate,
-        // term,
         paidOff,
         // debtor,
+        debtor: {
+          firstname,
+          lastname,
+          birthday,
+          phone,
+          email,
+          selectedMaritalStatus,
+          children: hasChildren,
+          employer,
+          annualSalary,
+          address: {
+            city,
+            street,
+            zip: zipCode,
+            country: selectedCountry,
+          },
+        },
       }),
       headers: { "Content-Type": "application/json" },
     })
@@ -39,13 +68,26 @@ const AddNewLoan = () => {
       })
       .catch((error) => console.log(error));
 
+    // Alle Form-Felder wieder leeren
     setAmount("");
     setPayoutDate("");
     setInstallment("");
     setInterestRate("");
-    // setTerm("");
-    setPaidOff("");
-    setDebtor([]);
+    setFirstname("");
+    setLastname("");
+    setBirthday("");
+    setPhone("");
+    setEmail("");
+    setSelectedMaritalStatus("");
+    setHasChildren(false);
+    setEmployer("");
+    setAnnualSalary("");
+    setCity("");
+    setStreet("");
+    setZipCode("");
+    setSelectedCountry("");
+
+    document.documentElement.scrollTop = 0;
   };
 
   //   console.log(addLoan);
@@ -154,7 +196,7 @@ const AddNewLoan = () => {
           {/* LOAN DATA */}
           {/* =========================== */}
           <article className="loan-data-container">
-            <h2>Kreditdaten:</h2>
+            <h2>Kredit:</h2>
 
             <form>
               {/* loan amount */}
@@ -235,9 +277,13 @@ const AddNewLoan = () => {
                     name="firstname"
                     id="firstname"
                     placeholder=""
+                    // value={debtor.firstname}
+                    // onChange={(e) =>
+                    //   setDebtor({ ...debtor, firstname: e.target.value })
+                    // }
                     value={firstname}
                     onChange={(e) => setFirstname(e.target.value)}
-                    // required
+                    required
                   />
                 </div>
 
@@ -249,6 +295,8 @@ const AddNewLoan = () => {
                     name="lastname"
                     id="lastname"
                     placeholder=""
+                    value={lastname}
+                    onChange={(e) => setLastname(e.target.value)}
                     // required
                   />
                 </div>
@@ -261,6 +309,8 @@ const AddNewLoan = () => {
                     name="birthday"
                     id="birthday"
                     placeholder=""
+                    value={birthday}
+                    onChange={(e) => setBirthday(e.target.value)}
                     // required
                   />
                 </div>
@@ -269,7 +319,12 @@ const AddNewLoan = () => {
                 <div className="marital-status">
                   <label htmlFor="maritalStatus">Familienstand:</label>
                   <div className="custom-select">
-                    <select name="maritalStatus" id="maritalStatus">
+                    <select
+                      name="maritalStatus"
+                      id="maritalStatus"
+                      value={selectedMaritalStatus}
+                      onChange={(e) => setSelectedMaritalStatus(e.target.value)}
+                    >
                       <option value="">bitte wählen</option>
                       <option value="ledig">ledig</option>
                       <option value="verheiratet">verheiratet</option>
@@ -285,12 +340,22 @@ const AddNewLoan = () => {
                   <div className="children-checkbox-container">
                     <label htmlFor="hasChildren">ja</label>
                     <input
-                      type="checkbox"
-                      name="hasChildren"
+                      type="radio"
+                      name="children"
                       id="hasChildren"
+                      value="ja"
+                      checked={hasChildren === "ja"}
+                      onChange={(e) => setHasChildren(e.target.value)}
                     />
                     <label htmlFor="noChildren">nein</label>
-                    <input type="checkbox" name="noChildren" id="noChildren" />
+                    <input
+                      type="radio"
+                      name="children"
+                      id="noChildren"
+                      value="nein"
+                      checked={hasChildren === "nein"}
+                      onChange={(e) => setHasChildren(e.target.value)}
+                    />
                   </div>
                 </div>
               </article>
@@ -298,12 +363,14 @@ const AddNewLoan = () => {
               <article className="address">
                 {/* debtor street */}
                 <div className="street">
-                  <label htmlFor="street">Straß + Hausnummer:</label>
+                  <label htmlFor="street">Straße + Hausnummer:</label>
                   <input
                     type="text"
                     name="street"
                     id="street"
                     placeholder="z.B. Am Friedhof 3"
+                    value={street}
+                    onChange={(e) => setStreet(e.target.value)}
                     // required
                   />
                 </div>
@@ -316,6 +383,8 @@ const AddNewLoan = () => {
                     name="city"
                     id="city"
                     placeholder=""
+                    value={city}
+                    onChange={(e) => setCity(e.target.value)}
                     // required
                   />
                 </div>
@@ -327,6 +396,8 @@ const AddNewLoan = () => {
                     name="zip"
                     id="zip"
                     placeholder=""
+                    value={zipCode}
+                    onChange={(e) => setZipCode(e.target.value)}
                     // required
                   />
                 </div>
@@ -334,7 +405,13 @@ const AddNewLoan = () => {
                 {/* debtor country */}
                 <div className="country">
                   <label htmlFor="country">Land:</label>
-                  <select name="country" id="country">
+                  <select
+                    name="country"
+                    id="country"
+                    value={selectedCountry}
+                    onChange={(e) => setSelectedCountry(e.target.value)}
+                  >
+                    <option value="--">- bitte wählen -</option>
                     <option value="deutschland">Deutschland</option>
                     <option value="oesterreich">Österreich</option>
                     <option value="schweiz">Schweiz</option>
@@ -353,6 +430,8 @@ const AddNewLoan = () => {
                     name="phone"
                     id="phone"
                     placeholder="inkl. Vorwahl"
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
                     // required
                   />
                 </div>
@@ -365,6 +444,8 @@ const AddNewLoan = () => {
                     name="email"
                     id="email"
                     placeholder=""
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                     // required
                   />
                 </div>
@@ -379,6 +460,8 @@ const AddNewLoan = () => {
                     name="employer"
                     id="employer"
                     placeholder=""
+                    value={employer}
+                    onChange={(e) => setEmployer(e.target.value)}
                     // required
                   />
                 </div>
@@ -391,6 +474,8 @@ const AddNewLoan = () => {
                     name="salary"
                     id="salary"
                     placeholder=""
+                    value={annualSalary}
+                    onChange={(e) => setAnnualSalary(e.target.value)}
                     // required
                   />
                   <p>€</p>
