@@ -213,3 +213,100 @@
     display: inline-block;
     justify-items: right;
 }
+
+// Container for loading spinner and loading message
+// ===================================================
+.loading-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+
+    // Loading spinner
+    // =======================
+    .spinner {
+        display: none;
+        width: 11.2px;
+        height: 11.2px;
+        animation: spinner-o824ag 1s infinite linear;
+
+        div {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #221d47;
+            border-radius: 50%;
+            animation: spinner-vse6n7 1.25s infinite ease;
+
+            &:nth-child(1) {
+                --rotation: 90;
+            }
+
+            &:nth-child(2) {
+                --rotation: 180;
+            }
+
+            &:nth-child(3) {
+                --rotation: 270;
+            }
+
+            &:nth-child(4) {
+                --rotation: 360;
+            }
+        }
+    }
+
+    @keyframes spinner-vse6n7 {
+        0%,
+        100% {
+            transform: rotate(calc(var(--rotation) * 1deg)) translateY(0);
+        }
+
+        50% {
+            transform: rotate(calc(var(--rotation) * 1deg)) translateY(300%);
+        }
+    }
+
+    @keyframes spinner-o824ag {
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    // Loading message
+    .loading-message {
+        display: none;
+        font-family: "RussoOne";
+        color: var(--pale-midnight-violet);
+        font-size: 1.1rem;
+        text-align: center;
+    }
+
+    // Hide/show elements
+    // =======================
+
+    .visible {
+        display: inline-block;
+        margin-top: 15%;
+    }
+
+    .visible-message {
+        display: block;
+    }
+}
+
+// Container for redirecting buttons (after loading spinner)
+// ===================================================
+.redirect-container {
+    margin-top: 15%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    transition: 0.8s ease-in-out;
+}
+
+// hidden class
+.hidden {
+    display: none;
+}
