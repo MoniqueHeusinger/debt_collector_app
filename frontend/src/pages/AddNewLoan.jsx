@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { backendURL } from "../api";
+import { Link } from "react-router-dom";
 import Nav from "../components/Nav";
 import "./AddNewLoan.scss";
 // import "./AddNewLoanNew.css"; // with custom select style - not working
@@ -88,6 +89,53 @@ const AddNewLoan = () => {
     setSelectedCountry("");
 
     document.documentElement.scrollTop = 0;
+
+    // after click on submit button --> hide the form --> display loading spinner and loading message
+    // elements to be hidden after click on submit button
+    const loanDataContainer = document.body.querySelector(
+      ".loan-data-container"
+    );
+    const debtorDataContainer = document.body.querySelector(
+      ".debtor-data-container"
+    );
+    const loanSubmitBtn = document.body.querySelector("#loanSubmitBtn");
+
+    // loading-spinner and -message to be visible
+    const loadingSpinner = document.body.querySelector(".spinner");
+    const loadingMessage = document.body.querySelector(".loading-message");
+
+    // hide elements
+    loanDataContainer.classList.add("hidden");
+    debtorDataContainer.classList.add("hidden");
+    loanSubmitBtn.classList.add("hidden");
+
+    // display loading spinner
+    loadingSpinner.classList.add("visible");
+    loadingMessage.classList.add("visible-message");
+
+    // danach soll mit Zeitverzögerung zwei buttons angezeigt werden: weiteren Kredit anlegen und zur Kreditübersicht
+    // Container with 2 redirecting buttons
+    const redirectContainer = document.body.querySelector(
+      ".redirect-container"
+    );
+    const createAnotherLoanBtn = document.body.querySelector(
+      "#createAnotherLoanBtn"
+    );
+    const redirectLoanOverviewBtn = document.body.querySelector(
+      "#redirectLoanOverviewBtn"
+    );
+
+    // wait for 3 sec (meanwhile display loading spinner) --> display redirect container with buttons
+    setTimeout(() => {
+      // hide loading spinner and -message
+      loadingSpinner.classList.remove("visible");
+      loadingMessage.classList.remove("visible-message");
+
+      // make redirect container with buttons visible
+      redirectContainer.classList.remove("hidden");
+      createAnotherLoanBtn.classList.remove("hidden");
+      redirectLoanOverviewBtn.classList.remove("hidden");
+    }, 3000);
   };
 
   //   console.log(addLoan);
@@ -484,9 +532,43 @@ const AddNewLoan = () => {
             </form>
           </article>
 
-          <button className="btn submit" onClick={addLoan}>
+          <button className="btn submit" onClick={addLoan} id="loanSubmitBtn">
             anlegen
           </button>
+          {/* =================================== */}
+          {/* Loading-Element */}
+          {/* =================================== */}
+          <article className="loading-screen">
+            {/* Spinner */}
+            <div className="spinner">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            {/* Loading message */}
+            <p className="loading-message">Daten werden angelegt...</p>
+          </article>
+
+          {/* =================================== */}
+          {/* Redirect buttons */}
+          {/* =================================== */}
+          <article className="redirect-container hidden">
+            <Link
+              to="/add-new-loan"
+              className="btn hidden"
+              id="createAnotherLoanBtn"
+            >
+              weiteren Kredit anlegen
+            </Link>
+            <Link
+              to="/loans"
+              className="btn hidden"
+              id="redirectLoanOverviewBtn"
+            >
+              zur Kreditübersicht
+            </Link>
+          </article>
         </section>
       </section>
     </>
