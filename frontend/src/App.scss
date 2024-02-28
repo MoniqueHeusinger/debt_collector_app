@@ -65,6 +65,23 @@ html {
             }
         }
 
+        .btn-colored {
+            display: inline-block;
+            padding: 20px;
+            background-color: white;
+            border: none;
+            font-family: "RussoOne";
+            font-size: 1.2rem;
+            color: var(--pale-midnight-violet);
+            position: relative;
+            cursor: pointer;
+            // box-shadow: 3px -2px 12px -4px rgba(112, 112, 112, 1);
+
+            &:hover {
+                background-color: transparent;
+            }
+        }
+
         .main-grid-structure {
             display: grid;
             grid-template-columns: 120px auto;
