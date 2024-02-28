@@ -1,79 +1,158 @@
 @use "../assets/generalStyles/mixinLib.scss";
 
-.sorter {
-    margin: 1.5rem;
-    font-family: "RussoOne";
-    font-size: 1.2rem;
-    color: var(--pale-midnight-violet);
+.filterBtn-container {
+    margin: 2rem auto 0 auto;
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(4, 240px);
+    gap: 24px;
+    justify-content: space-between;
+
+    // .active {
+    //     padding: 10px 20px 20px 20px;
+    //     border-bottom: 10px solid var(--medium-violet);
+    // }
+
+    #allLoansBtn {
+        background-color: white;
+    }
+
+    #upToFiveBtn {
+        background-color: var(--light-violet);
+        color: white;
+
+        // &:hover {
+        //     background-color: transparent;
+        //     color: var(--pale-midnight-violet);
+        // }
+    }
+
+    #FiveToTenBtn {
+        background-color: var(--medium-violet);
+        color: white;
+    }
+
+    #GThanTenBtn {
+        background-color: var(--dark-violet);
+        color: white;
+    }
 }
 
 .loan-card-container {
-    margin: 1.5rem;
-    padding-bottom: 2rem;
+    margin: 0 auto;
+    padding-block: 2.5rem;
+    width: 80%;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 1fr;
     gap: 32px;
-    border-bottom: 1px dotted var(--midnight-violet);
+
+    .amountHighBorder {
+        border-right: 10px solid var(--dark-violet);
+        p:nth-of-type(1) {
+            background-color: var(--dark-violet);
+        }
+    }
+
+    .amountMediumBorder {
+        border-right: 10px solid var(--medium-violet);
+        p:nth-of-type(1) {
+            background-color: var(--medium-violet);
+        }
+    }
+
+    .amountLowBorder {
+        border-right: 10px solid var(--light-violet);
+        p:nth-of-type(1) {
+            background-color: var(--light-violet);
+        }
+    }
 
     .loan-card {
-        padding: 10px;
         display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 50px 60px 50px;
+        grid-template-columns: 15% 40% 20% 20% 5%;
+        grid-template-rows: 1fr 1fr;
         background-color: white;
         box-shadow: 4px 7px 16px -4px rgba(112, 112, 112, 1);
-        @include mixinLib.coloredBorderBottom();
+        // @include mixinLib.coloredBorderBottom();
+        // border-right: 10px solid var(--medium-violet);
         font-family: "RussoOne";
         text-align: center;
         transition: 0.3s;
 
         &:hover {
-            transform: scale(1.06);
+            transform: scale(1.03);
             cursor: pointer;
         }
 
         .loan-amount {
+            grid-column: 1 / 2;
+            grid-row: 1 / 3;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 2rem;
+            font-size: 1.5rem;
             color: var(--white-violet);
             background-color: var(--medium-violet);
         }
 
         .loan-debtor-name {
+            grid-column: 2 / 3;
+            grid-row: 1 / 3;
             font-size: 1.3rem;
             color: var(--pale-midnight-violet);
             align-self: center;
         }
-        // .loan-date {
-        // }
-        .paidOff-container {
+
+        .loan-next-installment-text {
+            grid-column: 3 / 4;
+            grid-row: 1 / 2;
             display: flex;
             align-items: center;
-            align-self: end;
+            border-bottom: 1px dotted var(--midnight-violet);
+        }
+
+        .loan-next-installment-date {
+            grid-column: 4 / 5;
+            grid-row: 1 / 2;
+            border-bottom: 1px dotted var(--midnight-violet);
+        }
+
+        .loan-last-installment-text {
+            grid-column: 3 / 4;
+            grid-row: 2 / 3;
+            display: flex;
+            align-items: center;
+        }
+        .loan-last-installment-date {
+            grid-column: 4 / 5;
+            grid-row: 2 / 3;
+        }
+
+        .loan-next-installment-date,
+        .loan-last-installment-date {
             font-family: "NotoSans";
+            display: flex;
+            align-items: center;
+        }
 
-            .loan-paid-status {
-                flex-basis: 50%;
-                font-weight: 600;
-                border-right: 1px dotted var(--midnight-violet);
-            }
+        #editIcon {
+            margin: 0 auto;
+            padding: 5px;
+            grid-column: 5 / 6;
+            grid-row: 1 / 2;
+            width: 32px;
+        }
 
-            .not-paid-red {
-                color: red;
-            }
+        #deleteIcon {
+            margin: 0 auto;
+            padding: 5px;
+            grid-column: 5 / 6;
+            grid-row: 2 / 3;
+            width: 32px;
+        }
 
-            .paid-green {
-                color: rgb(1, 183, 1);
-            }
-            .loan-unpaid-installments {
-                flex-grow: 1;
-                & > span {
-                    display: block;
-                    font-weight: 700;
-                }
-            }
+        .hidden {
+            display: none;
         }
     }
 }

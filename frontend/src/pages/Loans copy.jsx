@@ -50,42 +50,6 @@ const Loans = () => {
     return loansLessThan5G;
   });
 
-  // ===========================================
-  // Filter buttons - mark colored when clicked
-  // ===========================================
-  const filterBtnAll = document.body.querySelector("#allLoansBtn");
-  const filterBtnUpToFive = document.body.querySelector("#upToFiveBtn");
-  const filterBtnFiveToTen = document.body.querySelector("#FiveToTenBtn");
-  const filterBtnGThanTen = document.body.querySelector("#GThanTenBtn");
-
-  const activeOne = () => {
-    filterBtnAll.classList.add("active");
-    filterBtnUpToFive.classList.remove("active");
-    filterBtnFiveToTen.classList.remove("active");
-    filterBtnGThanTen.classList.remove("active");
-  };
-
-  const activeTwo = () => {
-    filterBtnAll.classList.remove("active");
-    filterBtnUpToFive.classList.add("active");
-    filterBtnFiveToTen.classList.remove("active");
-    filterBtnGThanTen.classList.remove("active");
-  };
-
-  const activeThree = () => {
-    filterBtnAll.classList.remove("active");
-    filterBtnUpToFive.classList.remove("active");
-    filterBtnFiveToTen.classList.add("active");
-    filterBtnGThanTen.classList.remove("active");
-  };
-
-  const activeFour = () => {
-    filterBtnAll.classList.remove("active");
-    filterBtnUpToFive.classList.remove("active");
-    filterBtnFiveToTen.classList.remove("active");
-    filterBtnGThanTen.classList.add("active");
-  };
-
   return (
     <>
       <section className="main-grid-structure">
@@ -95,42 +59,13 @@ const Loans = () => {
         </section>
 
         <section className="main-content-grid">
-          {/* Filter buttons */}
-          <article className="filterBtn-container">
-            <button
-              className="btn-colored"
-              onClick={activeOne}
-              id="allLoansBtn"
-            >
-              Alle ({allLoans.length})
-            </button>
-            <button
-              className="btn-colored"
-              onClick={activeTwo}
-              id="upToFiveBtn"
-            >
-              <span>&#60;</span> 5.000 € ({filteredLoans1To5G.length})
-            </button>
-            <button
-              className="btn-colored"
-              onClick={activeThree}
-              id="FiveToTenBtn"
-            >
-              5.001 - 10.000 € ({filteredLoans5GTo10G.length})
-            </button>
-            <button
-              className="btn-colored"
-              onClick={activeFour}
-              id="GThanTenBtn"
-            >
-              <span>&#62;</span> 10.000 € ({filteredLoansGreaterThan10G.length})
-            </button>
-          </article>
-          {/* ===== Loans > 10.000 € ===== */}
+          <p className="sorter">
+            <span>&#62;</span> 10.000 €
+          </p>
+          {/* Loans > 10.000 €*/}
           <article className="loan-card-container">
             {filteredLoansGreaterThan10G.map((loan) => (
               <LoanCard
-                className="amountHighBorder"
                 key={loan._id}
                 _id={loan._id}
                 amount={loan.amount}
@@ -143,11 +78,11 @@ const Loans = () => {
             ))}
           </article>
 
-          {/* ===== Loans 5.001 - 10.000 ===== € */}
+          {/* Loans 5.001 - 10.000 € */}
+          <p className="sorter">5.001 - 10.000 €</p>
           <article className="loan-card-container">
             {filteredLoans5GTo10G.map((loan) => (
               <LoanCard
-                className="amountMediumBorder"
                 key={loan._id}
                 _id={loan._id}
                 amount={loan.amount}
@@ -160,11 +95,14 @@ const Loans = () => {
             ))}
           </article>
 
-          {/* ===== Loans 1 - 5000 € ===== */}
+          {/* Loans 1 - 5000 € */}
+          <p className="sorter">
+            <span>&#60;</span> 5.000 €
+          </p>
+
           <article className="loan-card-container">
             {filteredLoans1To5G.map((loan) => (
               <LoanCard
-                className="amountLowBorder"
                 key={loan._id}
                 _id={loan._id}
                 amount={loan.amount}
