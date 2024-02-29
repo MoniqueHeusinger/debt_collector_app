@@ -2,10 +2,13 @@ import { useEffect, useState } from "react";
 import Nav from "../components/Nav";
 import { backendURL } from "../api";
 import LoanCard from "../components/LoanCard";
+import scrollToTopPrimary from "../assets/img/icons/scroll-to-top-primary.png";
 import "./Loans.scss";
 
 const Loans = () => {
   const [allLoans, setAllLoans] = useState([]);
+  const [displayedData, setDisplayedData] = useState(allLoans);
+  const [colorByAmount, setColorByAmount] = useState("");
 
   // All loans fetch
   useEffect(() => {
@@ -30,8 +33,11 @@ const Loans = () => {
     fetchAllLoans();
   }, []);
 
+  useEffect(() => {
+    setDisplayedData(allLoans);
+  }, [allLoans]);
+
   console.log(allLoans);
-  console.log("Anzahl Kredite: ", allLoans.length);
 
   // loans filtered: 1 - 5000 €
   const filteredLoans1To5G = allLoans.filter((singleloan) => {
@@ -51,7 +57,7 @@ const Loans = () => {
   });
 
   // ===========================================
-  // Filter buttons - mark colored when clicked
+  // Filter buttons - mark outlined when clicked
   // ===========================================
   const filterBtnAll = document.body.querySelector("#allLoansBtn");
   const filterBtnUpToFive = document.body.querySelector("#upToFiveBtn");
@@ -63,6 +69,8 @@ const Loans = () => {
     filterBtnUpToFive.classList.remove("active");
     filterBtnFiveToTen.classList.remove("active");
     filterBtnGThanTen.classList.remove("active");
+    setDisplayedData(allLoans);
+    setColorByAmount("");
   };
 
   const activeTwo = () => {
@@ -70,6 +78,8 @@ const Loans = () => {
     filterBtnUpToFive.classList.add("active");
     filterBtnFiveToTen.classList.remove("active");
     filterBtnGThanTen.classList.remove("active");
+    setDisplayedData(filteredLoans1To5G);
+    setColorByAmount("amountLowBorder");
   };
 
   const activeThree = () => {
@@ -77,6 +87,8 @@ const Loans = () => {
     filterBtnUpToFive.classList.remove("active");
     filterBtnFiveToTen.classList.add("active");
     filterBtnGThanTen.classList.remove("active");
+    setDisplayedData(filteredLoans5GTo10G);
+    setColorByAmount("amountMediumBorder");
   };
 
   const activeFour = () => {
@@ -84,7 +96,22 @@ const Loans = () => {
     filterBtnUpToFive.classList.remove("active");
     filterBtnFiveToTen.classList.remove("active");
     filterBtnGThanTen.classList.add("active");
+    setDisplayedData(filteredLoansGreaterThan10G);
+    setColorByAmount("amountHighBorder");
   };
+
+  // ================================
+  // Scroll to top button
+  // ================================
+  const toTopBtn = document.body.querySelector(".to-top");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 100) {
+      toTopBtn.classList.add("active");
+    } else {
+      toTopBtn.classList.remove("active");
+    }
+  });
 
   return (
     <>
@@ -97,85 +124,39 @@ const Loans = () => {
         <section className="main-content-grid">
           {/* Filter buttons */}
           <article className="filterBtn-container">
-            <button
-              className="btn-colored"
-              onClick={activeOne}
-              id="allLoansBtn"
-            >
+            <button className="btn" onClick={activeOne} id="allLoansBtn">
               Alle ({allLoans.length})
             </button>
-            <button
-              className="btn-colored"
-              onClick={activeTwo}
-              id="upToFiveBtn"
-            >
+            <button className="btn" onClick={activeTwo} id="upToFiveBtn">
               <span>&#60;</span> 5.000 € ({filteredLoans1To5G.length})
             </button>
-            <button
-              className="btn-colored"
-              onClick={activeThree}
-              id="FiveToTenBtn"
-            >
+            <button className="btn" onClick={activeThree} id="FiveToTenBtn">
               5.001 - 10.000 € ({filteredLoans5GTo10G.length})
             </button>
-            <button
-              className="btn-colored"
-              onClick={activeFour}
-              id="GThanTenBtn"
-            >
+            <button className="btn" onClick={activeFour} id="GThanTenBtn">
               <span>&#62;</span> 10.000 € ({filteredLoansGreaterThan10G.length})
             </button>
           </article>
+
+          {/* ALL LOANS */}
           {/* ===== Loans > 10.000 € ===== */}
           <article className="loan-card-container">
-            {filteredLoansGreaterThan10G.map((loan) => (
+            {displayedData.map((loan) => (
               <LoanCard
-                className="amountHighBorder"
+                className={("amountHighBorder ", colorByAmount)}
                 key={loan._id}
                 _id={loan._id}
                 amount={loan.amount}
                 installment={loan.installment}
-                term={loan.term}
-                paidOff={loan.paidOff}
                 debtor={loan.debtor}
                 payoutDate={loan.payoutDate}
               />
             ))}
           </article>
 
-          {/* ===== Loans 5.001 - 10.000 ===== € */}
-          <article className="loan-card-container">
-            {filteredLoans5GTo10G.map((loan) => (
-              <LoanCard
-                className="amountMediumBorder"
-                key={loan._id}
-                _id={loan._id}
-                amount={loan.amount}
-                installment={loan.installment}
-                term={loan.term}
-                paidOff={loan.paidOff}
-                debtor={loan.debtor}
-                payoutDate={loan.payoutDate}
-              />
-            ))}
-          </article>
-
-          {/* ===== Loans 1 - 5000 € ===== */}
-          <article className="loan-card-container">
-            {filteredLoans1To5G.map((loan) => (
-              <LoanCard
-                className="amountLowBorder"
-                key={loan._id}
-                _id={loan._id}
-                amount={loan.amount}
-                installment={loan.installment}
-                term={loan.term}
-                paidOff={loan.paidOff}
-                debtor={loan.debtor}
-                payoutDate={loan.payoutDate}
-              />
-            ))}
-          </article>
+          <a href="#" className="to-top">
+            <img src={scrollToTopPrimary} alt="up" />
+          </a>
         </section>
       </section>
     </>

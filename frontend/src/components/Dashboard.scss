@@ -23,6 +23,7 @@
 
             a {
                 display: inline-block;
+                margin-top: 2rem;
                 padding: 10px 20px 10px 3px;
                 font-weight: bold;
                 border-bottom: 4px solid transparent;
@@ -181,6 +182,8 @@
         .new-loan-container {
             margin-top: 24px;
             background-color: var(--dark-violet);
+            border-radius: 8px;
+            border: 4px solid var(--dark-violet);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -191,7 +194,9 @@
             transition: 0.3s;
 
             &:hover {
-                background-color: var(--light-violet);
+                // background-color: var(--light-violet);
+                // color: var(--midnight-violet);
+                background-color: transparent;
                 color: var(--midnight-violet);
             }
         }
