@@ -2,45 +2,22 @@
 
 .filterBtn-container {
     margin: 2rem auto 0 auto;
+    padding-bottom: 5rem;
     width: 80%;
     display: grid;
     grid-template-columns: repeat(4, 240px);
     gap: 24px;
     justify-content: space-between;
 
-    // .active {
-    //     padding: 10px 20px 20px 20px;
-    //     border-bottom: 10px solid var(--medium-violet);
-    // }
-
-    #allLoansBtn {
-        background-color: white;
-    }
-
-    #upToFiveBtn {
-        background-color: var(--light-violet);
-        color: white;
-
-        // &:hover {
-        //     background-color: transparent;
-        //     color: var(--pale-midnight-violet);
-        // }
-    }
-
-    #FiveToTenBtn {
-        background-color: var(--medium-violet);
-        color: white;
-    }
-
-    #GThanTenBtn {
-        background-color: var(--dark-violet);
-        color: white;
+    .active {
+        background-color: transparent;
+        color: var(--midnight-violet);
     }
 }
 
 .loan-card-container {
     margin: 0 auto;
-    padding-block: 2.5rem;
+    padding-bottom: 2rem;
     width: 80%;
     display: grid;
     grid-template-columns: 1fr;
@@ -50,6 +27,7 @@
         border-right: 10px solid var(--dark-violet);
         p:nth-of-type(1) {
             background-color: var(--dark-violet);
+            text-shadow: 1px 2px rgb(58, 58, 58);
         }
     }
 
@@ -57,6 +35,7 @@
         border-right: 10px solid var(--medium-violet);
         p:nth-of-type(1) {
             background-color: var(--medium-violet);
+            text-shadow: 1px 2px rgb(87, 87, 87);
         }
     }
 
@@ -64,6 +43,7 @@
         border-right: 10px solid var(--light-violet);
         p:nth-of-type(1) {
             background-color: var(--light-violet);
+            text-shadow: 1px 2px rgb(87, 87, 87);
         }
     }
 
@@ -155,4 +135,24 @@
             display: none;
         }
     }
+}
+
+// Scroll to top button
+// ==========================
+.to-top {
+    position: fixed;
+    bottom: 16px;
+    right: 32px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s;
+
+    img {
+        width: 50px;
+    }
+}
+.active {
+    bottom: 32px;
+    pointer-events: inherit;
+    opacity: 1;
 }
