@@ -10,7 +10,7 @@ const ScrollToTopBtn = () => {
 
   const handleScroll = () => {
     const scrollTop = window.scrollY || document.documentElement.scrollTop;
-    setIsVisible(scrollTop > 100);
+    setIsVisible(scrollTop > 200);
   };
 
   const scrollToTop = () => {
