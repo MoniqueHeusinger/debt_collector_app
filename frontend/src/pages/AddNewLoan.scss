@@ -212,6 +212,20 @@
     margin: 0px 1.5rem 24px 1.5rem;
     display: inline-block;
     justify-items: right;
+
+    padding: 10px 40px;
+    background-color: var(--midnight-violet);
+    color: var(--white-violet);
+    font-size: 1rem;
+    font-weight: 600;
+    border: 4px solid var(--midnight-violet);
+    border-radius: 8px;
+    transition: 0.3s;
+
+    &:hover {
+        background-color: transparent;
+        color: var(--midnight-violet);
+    }
 }
 
 // Container for loading spinner and loading message
@@ -283,7 +297,7 @@
         text-align: center;
     }
 
-    // Hide/show elements
+    // show elements
     // =======================
 
     .visible {

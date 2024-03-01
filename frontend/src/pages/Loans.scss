@@ -136,23 +136,3 @@
         }
     }
 }
-
-// Scroll to top button
-// ==========================
-.to-top {
-    position: fixed;
-    bottom: 16px;
-    right: 32px;
-    opacity: 0;
-    pointer-events: none;
-    transition: all 0.4s;
-
-    img {
-        width: 50px;
-    }
-}
-.active {
-    bottom: 32px;
-    pointer-events: inherit;
-    opacity: 1;
-}
