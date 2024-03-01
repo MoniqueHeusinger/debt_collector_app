@@ -26,7 +26,7 @@ This project was created as part of a coding bootcamp (fullstack development) at
 
 ### View all loans:
 
-![Screenshot family.business dashboard](./frontend/src/assets/img/screenshots/loans-screenshot2.png)
+![Screenshot family.business dashboard](./frontend/src/assets/img/screenshots/loans-screenshot.png)
 
 ### Add a new loan:
 

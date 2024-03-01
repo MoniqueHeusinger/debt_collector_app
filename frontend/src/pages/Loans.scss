@@ -54,7 +54,7 @@
         background-color: white;
         box-shadow: 4px 7px 16px -4px rgba(112, 112, 112, 1);
         // @include mixinLib.coloredBorderBottom();
-        // border-right: 10px solid var(--medium-violet);
+        border-right: 10px solid var(--medium-violet);
         font-family: "RussoOne";
         text-align: center;
         transition: 0.3s;
@@ -88,24 +88,30 @@
             grid-row: 1 / 2;
             display: flex;
             align-items: center;
-            border-bottom: 1px dotted var(--midnight-violet);
+            justify-content: center;
+            border-right: 1px dotted var(--midnight-violet);
+            border-left: 1px dotted var(--midnight-violet);
         }
 
         .loan-next-installment-date {
-            grid-column: 4 / 5;
-            grid-row: 1 / 2;
-            border-bottom: 1px dotted var(--midnight-violet);
+            grid-column: 3 / 4;
+            grid-row: 2 / 3;
+            border-right: 1px dotted var(--midnight-violet);
+            border-left: 1px dotted var(--midnight-violet);
         }
 
         .loan-last-installment-text {
-            grid-column: 3 / 4;
-            grid-row: 2 / 3;
+            grid-column: 4 / 5;
+            grid-row: 1 / 2;
             display: flex;
             align-items: center;
+            justify-content: center;
+            // border-right: 1px dotted var(--midnight-violet);
         }
         .loan-last-installment-date {
             grid-column: 4 / 5;
             grid-row: 2 / 3;
+            // border-right: 1px dotted var(--midnight-violet);
         }
 
         .loan-next-installment-date,
@@ -113,6 +119,7 @@
             font-family: "NotoSans";
             display: flex;
             align-items: center;
+            justify-content: center;
         }
 
         #editIcon {
