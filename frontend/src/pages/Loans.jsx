@@ -103,15 +103,15 @@ const Loans = () => {
   // ================================
   // Scroll to top button
   // ================================
-  const toTopBtn = document.body.querySelector(".to-top");
+  // const toTopBtn = document.body.querySelector(".to-top");
 
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 100) {
-      toTopBtn.classList.add("active");
-    } else {
-      toTopBtn.classList.remove("active");
-    }
-  });
+  // window.addEventListener("scroll", () => {
+  //   if (window.scrollY > 100) {
+  //     toTopBtn.classList.add("active");
+  //   } else {
+  //     toTopBtn.classList.remove("active");
+  //   }
+  // });
 
   return (
     <>
@@ -154,9 +154,9 @@ const Loans = () => {
             ))}
           </article>
 
-          <a href="#" className="to-top">
+          {/* <a href="#" className="to-top">
             <img src={scrollToTopPrimary} alt="up" />
-          </a>
+          </a> */}
         </section>
       </section>
     </>

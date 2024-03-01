@@ -26,13 +26,25 @@ const AddNewLoan = () => {
   const [employer, setEmployer] = useState("");
   const [annualSalary, setAnnualSalary] = useState("");
 
+  // elements to be hidden after click on submit button
+  const loanDataContainer = document.body.querySelector(".loan-data-container");
+  const debtorDataContainer = document.body.querySelector(
+    ".debtor-data-container"
+  );
+  const loanSubmitBtn = document.body.querySelector("#loanSubmitBtn");
+
+  // Container with 2 redirecting buttons
+  const redirectContainer = document.body.querySelector(".redirect-container");
+  const createAnotherLoanBtn = document.body.querySelector(
+    "#createAnotherLoanBtn"
+  );
+  const redirectLoanOverviewBtn = document.body.querySelector(
+    "#redirectLoanOverviewBtn"
+  );
+
   // Add Loan Function
   const addLoan = (event) => {
     event.preventDefault();
-
-    // console.log(typeof hasChildren); //string
-    // console.log(hasChildren.target); // undefined
-    // console.log(debtor);
 
     fetch(`${backendURL}/api/v1/loans`, {
       method: "POST",
@@ -69,7 +81,7 @@ const AddNewLoan = () => {
       })
       .catch((error) => console.log(error));
 
-    // Alle Form-Felder wieder leeren
+    // empty form elements after submit
     setAmount("");
     setPayoutDate("");
     setInstallment("");
@@ -90,21 +102,14 @@ const AddNewLoan = () => {
 
     document.documentElement.scrollTop = 0;
 
+    // ========================================
     // after click on submit button --> hide the form --> display loading spinner and loading message
-    // elements to be hidden after click on submit button
-    const loanDataContainer = document.body.querySelector(
-      ".loan-data-container"
-    );
-    const debtorDataContainer = document.body.querySelector(
-      ".debtor-data-container"
-    );
-    const loanSubmitBtn = document.body.querySelector("#loanSubmitBtn");
 
     // loading-spinner and -message to be visible
     const loadingSpinner = document.body.querySelector(".spinner");
     const loadingMessage = document.body.querySelector(".loading-message");
 
-    // hide elements
+    // hide form elements
     loanDataContainer.classList.add("hidden");
     debtorDataContainer.classList.add("hidden");
     loanSubmitBtn.classList.add("hidden");
@@ -113,17 +118,8 @@ const AddNewLoan = () => {
     loadingSpinner.classList.add("visible");
     loadingMessage.classList.add("visible-message");
 
-    // danach soll mit Zeitverzögerung zwei buttons angezeigt werden: weiteren Kredit anlegen und zur Kreditübersicht
-    // Container with 2 redirecting buttons
-    const redirectContainer = document.body.querySelector(
-      ".redirect-container"
-    );
-    const createAnotherLoanBtn = document.body.querySelector(
-      "#createAnotherLoanBtn"
-    );
-    const redirectLoanOverviewBtn = document.body.querySelector(
-      "#redirectLoanOverviewBtn"
-    );
+    // ========================================
+    // after displaying the loading spinner and -message --> 2 buttons will be visible (add another loan && redirect to loan overview)
 
     // wait for 3 sec (meanwhile display loading spinner) --> display redirect container with buttons
     setTimeout(() => {
@@ -136,6 +132,23 @@ const AddNewLoan = () => {
       createAnotherLoanBtn.classList.remove("hidden");
       redirectLoanOverviewBtn.classList.remove("hidden");
     }, 3000);
+  };
+
+  // ==================================================
+  // Add another loan --> display form elements again
+  // ==================================================
+  // after adding a loan and after displaying the loading spinner:
+  // click on button "weiteren Kredit anlegen" --> hides the buttons and displays the form again
+  const addAnotherLoan = () => {
+    // hide redirect container with buttons
+    redirectContainer.classList.add("hidden");
+    createAnotherLoanBtn.classList.add("hidden");
+    redirectLoanOverviewBtn.classList.add("hidden");
+
+    // make form elements visible again
+    loanDataContainer.classList.remove("hidden");
+    debtorDataContainer.classList.remove("hidden");
+    loanSubmitBtn.classList.remove("hidden");
   };
 
   //   console.log(addLoan);
@@ -532,7 +545,7 @@ const AddNewLoan = () => {
             </form>
           </article>
 
-          <button className="btn submit" onClick={addLoan} id="loanSubmitBtn">
+          <button className="submit" onClick={addLoan} id="loanSubmitBtn">
             anlegen
           </button>
           {/* =================================== */}
@@ -558,6 +571,7 @@ const AddNewLoan = () => {
               to="/add-new-loan"
               className="btn hidden"
               id="createAnotherLoanBtn"
+              onClick={addAnotherLoan}
             >
               weiteren Kredit anlegen
             </Link>
