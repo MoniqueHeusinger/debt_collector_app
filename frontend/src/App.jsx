@@ -5,6 +5,7 @@ import Loans from "./pages/Loans";
 import React from "react";
 import AddNewLoan from "./pages/AddNewLoan";
 import ScrollToTopBtn from "./components/ScrollToTopBtn";
+import LoanDetail from "./pages/LoanDetail";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/loans" element={<Loans />} />
           <Route path="/add-new-loan" element={<AddNewLoan />} />
+          <Route path="/loans/:loanId/" element={<LoanDetail />} />
         </Routes>
         <ScrollToTopBtn />
       </BrowserRouter>

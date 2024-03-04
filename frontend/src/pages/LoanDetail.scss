@@ -1,0 +1,109 @@
+@use "../assets/generalStyles/mixinLib.scss";
+
+.loan-detail-container {
+    @include mixinLib.gridAutofit();
+    grid-template-rows: repeat(3, 1fr);
+    border: 4px solid red;
+
+    // loan info data (amount...)
+    .loan-data-container {
+        grid-column: 1 / -1;
+        grid-row: 1 / 2;
+
+        .accordion {
+            .accordion-item {
+                .accordion-item-title {
+                    padding: 20px;
+                    display: block;
+                    position: relative;
+                    background: #eee;
+                    color: var(--midnight-violet);
+                    cursor: pointer;
+
+                    &:after {
+                        content: "\002B";
+                        margin-top: -1rem;
+                        position: absolute;
+                        right: 20px;
+                        top: 50px;
+                        font-size: 2rem;
+                        line-height: 2rem;
+                        font-weight: bold;
+                    }
+                }
+
+                .accordion-item-content {
+                    // padding: 20px;
+                    padding: 0px;
+                    max-height: 0;
+                    overflow: hidden;
+                    transition: max-height 1s ease-out;
+                    border: 3px solid green;
+
+                    &.visible {
+                        max-height: 500px;
+
+                        // p {
+                        //     display: block;
+                        // }
+                    }
+
+                    // p {
+                    //     display: none;
+                    // }
+                }
+
+                // .visible {
+                //     display: block;
+                // }
+
+                // .hidden {
+                //     display: none;
+                // }
+            }
+        }
+    }
+
+    // debtor info data (contact...)
+    .debtor-data-container {
+        grid-column: 1 / -1;
+        grid-row: 2 / 3;
+        .accordion {
+            padding-block: 18px;
+            width: 100%;
+            background-color: transparent;
+            font-family: "RussoOne";
+            font-size: 1.2rem;
+            color: var(--pale-midnight-violet);
+            text-align: left;
+            border: 1px dotted var(--midnight-violet);
+            outline: none;
+            cursor: pointer;
+            transition: 0.4s;
+
+            &:after {
+                content: "\002B";
+                color: var(--pale-midnight-violet);
+                font-size: 1.7rem;
+                float: right;
+                margin-right: 5px;
+            }
+        }
+
+        .active {
+            background-color: transparent;
+
+            &:after {
+                content: "\2212";
+            }
+        }
+
+        .panel {
+            padding: 0 18px;
+            max-height: 0;
+            background-color: white;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+        }
+    }
+}

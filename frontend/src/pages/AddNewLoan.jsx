@@ -61,7 +61,7 @@ const AddNewLoan = () => {
           birthday,
           phone,
           email,
-          selectedMaritalStatus,
+          maritalStatus: selectedMaritalStatus,
           children: hasChildren,
           employer,
           annualSalary,
