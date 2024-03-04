@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import Nav from "../components/Nav";
 import { backendURL } from "../api";
 import LoanCard from "../components/LoanCard";
-import scrollToTopPrimary from "../assets/img/icons/scroll-to-top-primary.png";
 import "./Loans.scss";
 
 const Loans = () => {
@@ -99,19 +98,6 @@ const Loans = () => {
     setDisplayedData(filteredLoansGreaterThan10G);
     setColorByAmount("amountHighBorder");
   };
-
-  // ================================
-  // Scroll to top button
-  // ================================
-  // const toTopBtn = document.body.querySelector(".to-top");
-
-  // window.addEventListener("scroll", () => {
-  //   if (window.scrollY > 100) {
-  //     toTopBtn.classList.add("active");
-  //   } else {
-  //     toTopBtn.classList.remove("active");
-  //   }
-  // });
 
   return (
     <>

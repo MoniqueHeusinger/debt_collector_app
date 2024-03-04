@@ -1,0 +1,60 @@
+.accordionwrapper {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  gap: 32px;
+
+  button {
+    padding: 10px 20px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  .accordion {
+    width: 100%;
+
+    .item {
+      margin-bottom: 10px;
+      padding-inline: 10px;
+      border: 1px dotted var(--midnight-violet);
+    }
+
+    .title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      color: var(--pale-midnight-violet);
+      letter-spacing: 1px;
+
+      // Open icon (+)
+      .open {
+        font-size: 1.5rem;
+        color: var(--pale-midnight-violet);
+
+        &::after {
+          content: "\002B";
+        }
+      }
+
+      // Close icon (-)
+      .close {
+        font-size: 1.5rem;
+        color: var(--pale-midnight-violet);
+
+        &::after {
+          content: "\2013";
+        }
+      }
+    }
+
+    .content {
+      padding: 20px;
+      height: auto;
+    }
+  }
+}
