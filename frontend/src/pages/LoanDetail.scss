@@ -2,108 +2,245 @@
 
 .loan-detail-container {
     @include mixinLib.gridAutofit();
-    grid-template-rows: repeat(3, 1fr);
-    border: 4px solid red;
+    justify-content: center;
 
     // loan info data (amount...)
     .loan-data-container {
         grid-column: 1 / -1;
         grid-row: 1 / 2;
 
-        .accordion {
-            .accordion-item {
-                .accordion-item-title {
-                    padding: 20px;
-                    display: block;
-                    position: relative;
-                    background: #eee;
-                    color: var(--midnight-violet);
-                    cursor: pointer;
+        .loan-data-info-wrapper {
+            margin-bottom: 48px;
+            display: flex;
+            // LOAN GENERAL INFO (AMOUNT, INSTALLMENT)
+            // ==========================================
+            .loan-data-info-general {
+                margin-right: 120px;
+                width: 50%;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                justify-content: space-between;
 
-                    &:after {
-                        content: "\002B";
-                        margin-top: -1rem;
-                        position: absolute;
-                        right: 20px;
-                        top: 50px;
-                        font-size: 2rem;
-                        line-height: 2rem;
-                        font-weight: bold;
+                p {
+                    padding-block: 12px;
+                    font-size: 1rem;
+                    border-bottom: 1px dotted var(--midnight-violet);
+
+                    &:nth-of-type(even):nth-of-type(-n + 6) {
+                        font-weight: 600;
+                    }
+                }
+                .total-amount {
+                    border-bottom: 7px double var(--medium-violet);
+                    font-weight: 800;
+                    font-size: 1.2rem;
+                }
+            }
+
+            // RESIDUAL DEBT => paid - unpaid bar graph
+            // ==========================================
+            .loan-data-info-residual-debt {
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                h3 {
+                    margin-top: 0;
+                    font-size: 1.5rem;
+                    letter-spacing: 1px;
+                }
+
+                .residual-debt-legend {
+                    padding-bottom: 6px;
+                    width: 90%;
+                    display: flex;
+                    justify-content: space-between;
+                    font-weight: 600;
+
+                    p:nth-of-type(1) {
+                        padding-left: 12px;
                     }
                 }
 
-                .accordion-item-content {
-                    // padding: 20px;
-                    padding: 0px;
-                    max-height: 0;
-                    overflow: hidden;
-                    transition: max-height 1s ease-out;
-                    border: 3px solid green;
+                // bar graph for amount paid/unpaid
+                .residual-debt-grid {
+                    width: 80%;
+                    height: 50px;
+                    border: 1px dotted var(--midnight-violet);
+                    flex-grow: 1;
+                    display: grid;
+                    grid-template-columns: repeat(20, 5%);
+                    grid-template-rows: 1fr;
 
-                    &.visible {
-                        max-height: 500px;
+                    p {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        height: 100%;
+                        text-align: center;
+                        font-family: "RussoOne";
+                        color: var(--white-violet);
+                        // grid-column: 1 / 10;
+                        background-color: var(--dark-violet);
+                        animation: fillAnimation 2s linear;
 
-                        // p {
-                        //     display: block;
-                        // }
+                        span {
+                            align-self: center;
+                            opacity: 0;
+                            animation: appear 1s ease-out forwards;
+                            animation-delay: 2s;
+                        }
                     }
-
-                    // p {
-                    //     display: none;
-                    // }
                 }
-
-                // .visible {
-                //     display: block;
-                // }
-
-                // .hidden {
-                //     display: none;
-                // }
             }
         }
     }
 
-    // debtor info data (contact...)
+    // DEBTOR DATA INFO (contact...)
+    // ================================
     .debtor-data-container {
         grid-column: 1 / -1;
         grid-row: 2 / 3;
-        .accordion {
-            padding-block: 18px;
-            width: 100%;
-            background-color: transparent;
-            font-family: "RussoOne";
-            font-size: 1.2rem;
-            color: var(--pale-midnight-violet);
-            text-align: left;
+
+        .debtor-data-personal-info {
+            margin-bottom: 2rem;
+            width: 40%;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+
+            h3 {
+                grid-column: 1 / 3;
+                font-size: 1.5rem;
+            }
+
+            p {
+                padding-block: 0px 12px;
+
+                &:nth-of-type(odd) {
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}
+
+.accordion-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 32px;
+
+    button {
+        padding: 10px 20px;
+        color: white;
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+    .accordion {
+        width: 100%;
+
+        .item {
+            margin-bottom: 12px;
+            padding-inline: 10px;
             border: 1px dotted var(--midnight-violet);
-            outline: none;
+        }
+
+        .title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             cursor: pointer;
-            transition: 0.4s;
+            color: var(--pale-midnight-violet);
+            letter-spacing: 1px;
 
-            &:after {
-                content: "\002B";
+            // Open icon (+)
+            .open {
+                font-size: 1.5rem;
                 color: var(--pale-midnight-violet);
-                font-size: 1.7rem;
-                float: right;
-                margin-right: 5px;
+
+                &::after {
+                    content: "\002B";
+                }
+            }
+
+            // Close icon (-)
+            .close {
+                font-size: 1.5rem;
+                color: var(--pale-midnight-violet);
+
+                &::after {
+                    content: "\2013";
+                }
             }
         }
 
-        .active {
-            background-color: transparent;
+        .content {
+            padding: 20px;
+            max-width: 60%;
+            height: auto;
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            // grid-template-columns: 1fr 1fr;
+            gap: 12px;
 
-            &:after {
-                content: "\2212";
+            p {
+                &:nth-of-type(odd) {
+                    font-weight: 600;
+                }
             }
         }
 
-        .panel {
-            padding: 0 18px;
-            max-height: 0;
-            background-color: white;
-            overflow: hidden;
-            transition: max-height 0.2s ease-out;
+        .content-flex {
+            margin-bottom: 2rem;
+            padding: 24px 60px 24px 30px;
+            display: flex;
+            justify-content: space-between;
+            gap: 200px;
+
+            p:nth-of-type(1) {
+                padding-bottom: 12px;
+                font-weight: 800;
+            }
+
+            .debtor-address {
+                p {
+                    line-height: 1.7;
+                }
+                .debtor-country {
+                    text-transform: capitalize;
+                }
+            }
+
+            .debtor-email {
+            }
         }
+    }
+}
+
+// Animations
+// ==================================
+// make graph bar slide in from left to right (residual debt)
+@keyframes fillAnimation {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+// make text with paid amount (residual debt) appear
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
     }
 }
