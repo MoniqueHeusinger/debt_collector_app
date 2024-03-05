@@ -82,6 +82,12 @@ html {
             }
         }
 
+        .align-right {
+            text-align: right;
+        }
+
+        // ==========================
+
         .main-grid-structure {
             display: grid;
             grid-template-columns: 120px auto;

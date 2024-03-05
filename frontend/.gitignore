@@ -24,3 +24,5 @@ dist-ssr
 *.sw?
 
 resources.txt
+LoanDetail copy_accordionAlternative.jsx
+LoanDetail copy.scss
