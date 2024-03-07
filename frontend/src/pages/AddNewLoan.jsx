@@ -8,9 +8,8 @@ import "./AddNewLoan.scss";
 const AddNewLoan = () => {
   const [amount, setAmount] = useState("");
   const [payoutDate, setPayoutDate] = useState("");
-  const [installment, setInstallment] = useState("");
+  const [duration, setDuration] = useState("");
   const [interestRate, setInterestRate] = useState("");
-  const [paidOff, setPaidOff] = useState(false);
   // const [debtor, setDebtor] = useState({ firstname: "" });
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
@@ -24,7 +23,7 @@ const AddNewLoan = () => {
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [employer, setEmployer] = useState("");
-  const [annualSalary, setAnnualSalary] = useState("");
+  const [monthlySalary, setMonthlySalary] = useState("");
 
   // elements to be hidden after click on submit button
   const loanDataContainer = document.body.querySelector(".loan-data-container");
@@ -51,9 +50,8 @@ const AddNewLoan = () => {
       body: JSON.stringify({
         amount,
         payoutDate,
-        installment,
+        duration,
         interestRate,
-        paidOff,
         // debtor,
         debtor: {
           firstname,
@@ -64,7 +62,8 @@ const AddNewLoan = () => {
           maritalStatus: selectedMaritalStatus,
           children: hasChildren,
           employer,
-          annualSalary,
+          monthlySalary,
+          // annualSalary,
           address: {
             city,
             street,
@@ -84,7 +83,7 @@ const AddNewLoan = () => {
     // empty form elements after submit
     setAmount("");
     setPayoutDate("");
-    setInstallment("");
+    setDuration("");
     setInterestRate("");
     setFirstname("");
     setLastname("");
@@ -94,7 +93,7 @@ const AddNewLoan = () => {
     setSelectedMaritalStatus("");
     setHasChildren(false);
     setEmployer("");
-    setAnnualSalary("");
+    setMonthlySalary("");
     setCity("");
     setStreet("");
     setZipCode("");
@@ -260,7 +259,7 @@ const AddNewLoan = () => {
             <h2>Kredit:</h2>
 
             <form>
-              {/* loan amount */}
+              {/* LOAN AMOUNT */}
               <div className="loan-amount">
                 <label htmlFor="amount">Kredithöhe:</label>
                 <input
@@ -275,7 +274,7 @@ const AddNewLoan = () => {
                 <p>€</p>
               </div>
 
-              {/* loan pay out date */}
+              {/* PAYOUT DATE LOAN */}
               <div className="payout-date">
                 <label htmlFor="payoutDate">Auszahlung am:</label>
                 <input
@@ -288,24 +287,24 @@ const AddNewLoan = () => {
                 />
               </div>
 
-              {/* loan installment */}
-              <div className="installment">
-                <label htmlFor="installment">Raten (monatlich)</label>
+              {/* DURATION OF PAYBACK (number of monthly payments) */}
+              <div className="duration">
+                <label htmlFor="duration">Laufzeit Ratenzahlungen</label>
                 <input
                   type="number"
-                  name="installment"
-                  id="installment"
+                  name="duration"
+                  id="duration"
                   min="1"
-                  max="9999"
-                  placeholder="z.B. 200,00"
-                  value={installment}
-                  onChange={(e) => setInstallment(Number(e.target.value))}
+                  max="24"
+                  placeholder="max. 24"
+                  value={duration}
+                  onChange={(e) => setDuration(Number(e.target.value))}
                   required
                 />
-                <p>€</p>
+                <p>Monate</p>
               </div>
 
-              {/* loan interestRate */}
+              {/* INTEREST RATE */}
               <div className="interest-rate">
                 <label htmlFor="interestRate">Zinsen (monatlich):</label>
                 <input
@@ -330,7 +329,7 @@ const AddNewLoan = () => {
             <h2>Schuldner:</h2>
             <form>
               <article className="personal-data">
-                {/* debtor firstname */}
+                {/* debtor FIRSTNAME */}
                 <div className="firstname">
                   <label htmlFor="firstname">Vorname:</label>
                   <input
@@ -348,7 +347,7 @@ const AddNewLoan = () => {
                   />
                 </div>
 
-                {/* debtor lastname */}
+                {/* debtor LASTNAME */}
                 <div className="lastname">
                   <label htmlFor="lastname">Nachname:</label>
                   <input
@@ -362,7 +361,7 @@ const AddNewLoan = () => {
                   />
                 </div>
 
-                {/* debtor birthday */}
+                {/* debtor BIRTHDAY */}
                 <div className="birthday">
                   <label htmlFor="birthday">Geburtstag:</label>
                   <input
@@ -376,7 +375,7 @@ const AddNewLoan = () => {
                   />
                 </div>
 
-                {/* debtor marital status */}
+                {/* debtor MARITAL STATUS */}
                 <div className="marital-status">
                   <label htmlFor="maritalStatus">Familienstand:</label>
                   <div className="custom-select">
@@ -395,7 +394,7 @@ const AddNewLoan = () => {
                   </div>
                 </div>
 
-                {/* debtor children */}
+                {/* debtor CHILDREN */}
                 <div className="children">
                   <p>Kinder:</p>
                   <div className="children-checkbox-container">
@@ -422,7 +421,7 @@ const AddNewLoan = () => {
               </article>
               <h4>Anschrift:</h4>
               <article className="address">
-                {/* debtor street */}
+                {/* debtor STREET */}
                 <div className="street">
                   <label htmlFor="street">Straße + Hausnummer:</label>
                   <input
@@ -436,7 +435,7 @@ const AddNewLoan = () => {
                   />
                 </div>
 
-                {/* debtor city */}
+                {/* debtor CITY */}
                 <div className="city">
                   <label htmlFor="city">Stadt:</label>
                   <input
@@ -449,7 +448,7 @@ const AddNewLoan = () => {
                     // required
                   />
                 </div>
-                {/* debtor zip */}
+                {/* debtor ZIP */}
                 <div className="zip">
                   <label htmlFor="zip">PLZ:</label>
                   <input
@@ -463,7 +462,7 @@ const AddNewLoan = () => {
                   />
                 </div>
 
-                {/* debtor country */}
+                {/* debtor COUNTRY */}
                 <div className="country">
                   <label htmlFor="country">Land:</label>
                   <select
@@ -483,7 +482,7 @@ const AddNewLoan = () => {
               </article>
               <h4>Kontaktdaten:</h4>
               <article className="contact">
-                {/* debtor phone */}
+                {/* debtor PHONE */}
                 <div className="phone">
                   <label htmlFor="phone">Telefonnr.:</label>
                   <input
@@ -497,7 +496,7 @@ const AddNewLoan = () => {
                   />
                 </div>
 
-                {/* debtor email */}
+                {/* debtor EMAIL */}
                 <div className="email">
                   <label htmlFor="email">E-Mail:</label>
                   <input
@@ -513,7 +512,7 @@ const AddNewLoan = () => {
               </article>
               <h4>Arbeitgeber:</h4>
               <article className="work">
-                {/* debtor employer */}
+                {/* debtor EMPLOYER */}
                 <div className="employer">
                   <label htmlFor="employer">Unternehmen:</label>
                   <input
@@ -527,7 +526,7 @@ const AddNewLoan = () => {
                   />
                 </div>
 
-                {/* debtor salary */}
+                {/* debtor SALARY */}
                 <div className="salary">
                   <label htmlFor="salary">Gehalt (monatlich netto):</label>
                   <input
@@ -535,8 +534,8 @@ const AddNewLoan = () => {
                     name="salary"
                     id="salary"
                     placeholder=""
-                    value={annualSalary}
-                    onChange={(e) => setAnnualSalary(e.target.value)}
+                    value={monthlySalary}
+                    onChange={(e) => setMonthlySalary(e.target.value)}
                     // required
                   />
                   <p>€</p>
@@ -549,22 +548,22 @@ const AddNewLoan = () => {
             anlegen
           </button>
           {/* =================================== */}
-          {/* Loading-Element */}
+          {/* LOADING ELEMENT */}
           {/* =================================== */}
           <article className="loading-screen">
-            {/* Spinner */}
+            {/* spinner */}
             <div className="spinner">
               <div></div>
               <div></div>
               <div></div>
               <div></div>
             </div>
-            {/* Loading message */}
+            {/* loading message */}
             <p className="loading-message">Daten werden angelegt...</p>
           </article>
 
           {/* =================================== */}
-          {/* Redirect buttons */}
+          {/* REDIRECT BUTTONS */}
           {/* =================================== */}
           <article className="redirect-container hidden">
             <Link

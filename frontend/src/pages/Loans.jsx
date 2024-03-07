@@ -139,10 +139,6 @@ const Loans = () => {
               />
             ))}
           </article>
-
-          {/* <a href="#" className="to-top">
-            <img src={scrollToTopPrimary} alt="up" />
-          </a> */}
         </section>
       </section>
     </>

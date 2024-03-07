@@ -19,12 +19,12 @@ const Nav = () => {
         <NavLink to="/add-new-loan">
           <img src={plusLoan} alt="neuer Kredit" />
         </NavLink>
-        <NavLink to="/">
+        {/* <NavLink to="/">
           <img src={users} alt="Schuldner" />
         </NavLink>
         <NavLink to="/">
           <img src={login} alt="Login" />
-        </NavLink>
+        </NavLink> */}
       </nav>
     </>
   );

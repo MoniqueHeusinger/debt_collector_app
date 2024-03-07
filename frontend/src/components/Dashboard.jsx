@@ -1,7 +1,96 @@
 import { NavLink, Link } from "react-router-dom";
 import "./Dashboard.scss";
+import { useEffect, useState } from "react";
+import { backendURL } from "../api";
 
 const Dashboard = () => {
+  const [allLoans, setAllLoans] = useState([]);
+  const [minAmountStat, setMinAmountStat] = useState(null);
+  const [maxAmountStat, setMaxAmountStat] = useState(null);
+  const [latestLoansArr, setLatestLoansArr] = useState([]);
+
+  // FETCH ALL LOANS
+  // ===================
+  useEffect(() => {
+    async function fetchAllLoans() {
+      try {
+        const loans = await fetch(`${backendURL}/api/v1/loans`);
+        const { result, success, error } = await loans.json();
+        if (!success) throw new Error(error);
+        return setAllLoans(
+          result.sort((amount1, amount2) =>
+            amount1.amount < amount2.amount
+              ? 1
+              : amount1.amount > amount2.amount
+              ? -1
+              : 0
+          )
+        );
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    fetchAllLoans();
+  }, []);
+
+  console.log(allLoans);
+
+  // FETCH MIN/MAX LOAN STATISTICS
+  // ==============================
+  useEffect(() => {
+    async function fetchMinMaxLoans() {
+      try {
+        const response = await fetch(`${backendURL}/api/v1/loans/minmaxstats`);
+        const { success, resultStats, error } = await response.json();
+
+        if (!success) {
+          throw new Error(error);
+        }
+
+        setMinAmountStat(resultStats.minAmount.amount);
+        setMaxAmountStat(resultStats.maxAmount.amount);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    fetchMinMaxLoans();
+  }, []);
+
+  // FETCH LATEST LOANS TOP 3
+  // ==============================
+  useEffect(() => {
+    async function fetchLatestLoans() {
+      try {
+        const response = await fetch(`${backendURL}/api/v1/loans/latestloans`);
+        const { success, latestLoans, error } = await response.json();
+
+        if (!success) {
+          throw new Error(error);
+        }
+
+        // convert payoutDate strings to date Object
+        const latestLoansWithFormattedDate = latestLoans.map((loan) => {
+          return { ...loan, payoutDate: new Date(loan.payoutDate) };
+        });
+
+        setLatestLoansArr(latestLoansWithFormattedDate);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    fetchLatestLoans();
+  }, []);
+
+  console.log(latestLoansArr);
+
+  //   Format Date to DD.MM.YYYY
+  //   =========================
+  const formattedDate = (dateString) => {
+    const options = { day: "2-digit", month: "2-digit", year: "numeric" };
+    const date = new Date(dateString);
+    return date.toLocaleDateString("de-DE", options);
+  };
+
   return (
     <>
       <section className="header-grid">
@@ -17,9 +106,9 @@ const Dashboard = () => {
               <NavLink>Schuldner</NavLink>
               <NavLink>Vermögen</NavLink>
             </div>
-            <div className="dashboard-overview-btn-container">
+            {/* <div className="dashboard-overview-btn-container">
               <button className="btn">Login</button>
-            </div>
+            </div> */}
           </article>
           <article className="dashboard-overview-content-container">
             <div className="overview-content-card">
@@ -31,42 +120,43 @@ const Dashboard = () => {
                 Monat
               </p>
             </div>
+
             <div className="overview-content-card">
-              <h3>Aktuell vergebene Kredite</h3>
-              <p>12</p>
-              <p>(500 € - 22.400 €)</p>
+              <Link to="/loans">
+                <h3>Aktuell vergebene Kredite</h3>
+                <p>{allLoans.length}</p>
+                <p>
+                  ({minAmountStat} € - {maxAmountStat} €)
+                </p>
+              </Link>
             </div>
+
             <div className="overview-content-card">
-              <h3>Aktuelle Schuldner</h3>
-              <p>12</p>
+              <h3>Neuester Schuldner</h3>
               <p>
-                <span className="percentage-shrink">- 4.5%</span> seit letztem
-                Monat
+                {latestLoansArr[0]?.debtor?.firstname}{" "}
+                {latestLoansArr[0]?.debtor?.lastname}
+              </p>
+              <p>
+                {latestLoansArr[0]?.debtor?.address?.city},{" "}
+                {latestLoansArr[0]?.debtor?.maritalStatus}
               </p>
             </div>
           </article>
 
           <article className="dues-and-new-loan-container">
             <article className="dues-container">
-              <h2>Fälligkeiten - TOP 3</h2>
+              <h2>Neueste Kredite</h2>
               <div className="dues-content">
-                <div className="dues-card">
-                  <h3>Jenny Block</h3>
-                  <p>fällig: in 3 Tagen</p>
-                  <p>Rate: 500 €</p>
-                </div>
-
-                <div className="dues-card">
-                  <h3>Ronny Meyer</h3>
-                  <p>fällig: in 3 Tagen</p>
-                  <p>Rate: 50 €</p>
-                </div>
-
-                <div className="dues-card">
-                  <h3>Ulf Rakowski</h3>
-                  <p>fällig: in 3 Tagen</p>
-                  <p>Rate: 200 €</p>
-                </div>
+                {latestLoansArr.map((loan, index) => (
+                  <div key={index} className="dues-card">
+                    <h3>
+                      {loan.debtor?.firstname} {loan.debtor?.lastname}
+                    </h3>
+                    <p>{formattedDate(loan.payoutDate)}</p>
+                    <p>{loan.amount} €</p>
+                  </div>
+                ))}
               </div>
             </article>
 
