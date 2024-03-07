@@ -12,7 +12,7 @@
     box-shadow: 4px 3px 8px -4px rgba(112, 112, 112, 1);
 
     form {
-        @include mixinLib.gridAutofit($gwmax: 200px, $gap: 72px);
+        @include mixinLib.gridAutofit($gwmax: 220px, $gap: 72px);
 
         label {
             font-weight: 500;
@@ -64,9 +64,9 @@
             }
         }
 
-        .installment {
+        .duration {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 90px auto;
             grid-template-rows: 1fr 1fr;
             gap: 8px;
             align-items: center;
@@ -77,13 +77,13 @@
             }
 
             input {
-                width: 120px;
+                width: 80px;
             }
         }
 
         .interest-rate {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 90px auto;
             grid-template-rows: 1fr 1fr;
             gap: 8px;
             align-items: center;

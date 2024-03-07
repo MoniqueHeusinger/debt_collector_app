@@ -34,11 +34,11 @@ const LoanCard = ({ _id, amount, debtor, className }) => {
             {debtor.firstname} {debtor.lastname}
           </p>
 
-          <p className="loan-next-installment-text">nächste Rate am:</p>
+          {/* <p className="loan-next-installment-text">nächste Rate am:</p>
           <p className="loan-next-installment-date">15.03.2024</p>
 
           <p className="loan-last-installment-text">letzte Rate am:</p>
-          <p className="loan-last-installment-date">15.05.2024</p>
+          <p className="loan-last-installment-date">15.05.2024</p> */}
 
           <img
             src={editIconSrc}
