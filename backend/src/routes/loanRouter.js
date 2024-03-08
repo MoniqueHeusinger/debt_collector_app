@@ -69,4 +69,23 @@ loanRouter.post("/", async function postNewLoanCtrl(req, res) {
   }
 });
 
+// DELETE loan
+// =============================
+loanRouter.delete("/:loanId", async function deleteLoanByIdCtrl(req, res) {
+  try {
+    const loanId = req.params.loanId;
+    const result = await LoanService.deleteLoan(loanId);
+    res.json({ success: true, result });
+  } catch (error) {
+    console.log(error);
+    res
+      .status(500)
+      .json({
+        success: false,
+        error,
+        message: error.message || "Could not delete loan",
+      });
+  }
+});
+
 export default loanRouter;
