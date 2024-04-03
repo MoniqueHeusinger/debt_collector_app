@@ -17,6 +17,7 @@
         label {
             font-weight: 500;
         }
+
         input {
             height: 30px;
             font-size: 1.1rem;
@@ -28,6 +29,7 @@
                 border: 1px solid var(--midnight-violet);
             }
         }
+
         p {
             font-size: 1.1rem;
             font-weight: 500;
@@ -103,7 +105,7 @@
 // DEBTOR DATA
 // ===================
 .debtor-data-container {
-    margin: 1.5rem;
+    margin-inline: 1.5rem;
     padding: 2px 24px 32px 24px;
     font-size: 1.1rem;
     background-color: white;
@@ -115,17 +117,20 @@
         padding-top: 12px;
         border-top: 1px dotted var(--midnight-violet);
     }
+
     form {
         label {
             font-weight: 500;
             padding-bottom: 12px;
         }
+
         input {
             height: 30px;
             font-size: 1.1rem;
             text-indent: 5px;
             border: var(--dark-violet) 1px dotted;
         }
+
         .personal-data {
             @include mixinLib.gridAutofit();
 
@@ -139,16 +144,19 @@
                 // .custom-select {
                 // }
             }
+
             .children {
                 @include mixinLib.flexColumn();
 
                 .children-checkbox-container {
                     display: flex;
                     align-items: center;
+
                     label {
                         margin-right: 8px;
                         padding-bottom: 0;
                     }
+
                     input {
                         margin-right: 32px;
                     }
@@ -165,11 +173,12 @@
             .country {
                 @include mixinLib.flexColumn();
 
-                select > option {
+                select>option {
                     font-size: 1.2rem;
                 }
             }
         }
+
         .contact {
             @include mixinLib.gridAutofit();
 
@@ -178,6 +187,7 @@
                 @include mixinLib.flexColumn();
             }
         }
+
         .work {
             @include mixinLib.gridAutofit();
 
@@ -188,6 +198,7 @@
                 gap: 8px;
                 align-items: center;
             }
+
             .salary {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
@@ -272,6 +283,7 @@
     }
 
     @keyframes spinner-vse6n7 {
+
         0%,
         100% {
             transform: rotate(calc(var(--rotation) * 1deg)) translateY(0);
