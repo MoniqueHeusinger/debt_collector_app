@@ -38,7 +38,7 @@ const LoanDetail = () => {
   }, [id]);
   console.log("Kredit: ", loan);
 
-  //   CALL LOAN CALCULATING FUNCTIONS
+  //   LOAN CALCULATING FUNCTIONS
   //   ====================================
   useEffect(() => {
     calculateLoanData();

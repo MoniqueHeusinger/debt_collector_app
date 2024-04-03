@@ -12,6 +12,7 @@
         .loan-data-info-wrapper {
             margin-bottom: 48px;
             display: flex;
+
             // LOAN GENERAL INFO (AMOUNT, INSTALLMENT)
             // ==========================================
             .loan-data-info-general {
@@ -30,6 +31,7 @@
                         font-weight: 600;
                     }
                 }
+
                 .total-amount {
                     border-bottom: 7px double var(--medium-violet);
                     font-weight: 800;
@@ -211,13 +213,13 @@
                 p {
                     line-height: 1.7;
                 }
+
                 .debtor-country {
                     text-transform: capitalize;
                 }
             }
 
-            .debtor-email {
-            }
+            .debtor-email {}
         }
     }
 }
@@ -229,6 +231,7 @@
     from {
         width: 0;
     }
+
     to {
         width: 100%;
     }
