@@ -16,6 +16,7 @@ const LoanDetail = () => {
   const [totalAmount, setTotalAmount] = useState("");
   const [monthlyInstallment, setMonthlyInstallment] = useState("");
   const [paidAmountStatus, setPaidAmountStatus] = useState("");
+  const [graphBarTooSmall, setGraphBarTooSmall] = useState(false);
 
   const params = useParams();
   const id = params.loanId;
@@ -75,6 +76,11 @@ const LoanDetail = () => {
     const paidBar = document.body.querySelector("#paidBar");
     if (paidBar) {
       paidBar.style.gridColumn = `1 / ${gridColumnEndNumber}`;
+    }
+
+    // if graph bar is too small, change text color and positioning
+    if (gridColumnEndNumber <= 5) {
+      setGraphBarTooSmall(true)
     }
   }, [loan]);
 
@@ -194,8 +200,13 @@ const LoanDetail = () => {
                   {/* bar graph --> amount paid/unpaid */}
                   <div className="residual-debt-grid">
                     <p id="paidBar">
-                      <span>{paidAmountStatus} €</span>
+                      {graphBarTooSmall ? "" : <span id="paidAmountTextInside">{paidAmountStatus} €</span>}
+
                     </p>
+
+                    {/* if graph bar is too small --> display text outside of graph bar */}
+                    {graphBarTooSmall ? <p id="paidAmountTextOutside">{paidAmountStatus} €</p> : ""}
+
                   </div>
                 </div>
               </article>

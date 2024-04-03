@@ -76,7 +76,7 @@
                     grid-template-columns: repeat(20, 5%);
                     grid-template-rows: 1fr;
 
-                    p {
+                    #paidBar {
                         display: flex;
                         justify-content: center;
                         align-items: center;
@@ -84,16 +84,27 @@
                         text-align: center;
                         font-family: "RussoOne";
                         color: var(--white-violet);
-                        // grid-column: 1 / 10;
                         background-color: var(--dark-violet);
                         animation: fillAnimation 2s linear;
 
-                        span {
+                        #paidAmountTextInside {
                             align-self: center;
                             opacity: 0;
                             animation: appear 1s ease-out forwards;
                             animation-delay: 2s;
                         }
+                    }
+
+                    // if graph bar is too small --> display text outside of graph bar instead
+                    #paidAmountTextOutside {
+                        padding-left: 6px;
+                        width: max-content;
+                        font-family: "RussoOne";
+                        color: var(--midnight-violet);
+                        align-self: center;
+                        opacity: 0;
+                        animation: appear 1s ease-out forwards;
+                        animation-delay: 2s;
                     }
                 }
             }
