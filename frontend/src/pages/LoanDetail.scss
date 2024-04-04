@@ -198,7 +198,6 @@
             height: auto;
             display: grid;
             grid-template-columns: 200px 1fr;
-            // grid-template-columns: 1fr 1fr;
             gap: 12px;
 
             p {
@@ -229,13 +228,55 @@
                     text-transform: capitalize;
                 }
             }
-
-            .debtor-email {}
         }
     }
 }
 
-// Animations
+.operating-buttons {
+    margin-right: 1.5rem;
+    grid-column-end: -1;
+    justify-self: end;
+
+}
+
+.delete-message-container {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+
+    img {
+        width: 32px;
+        height: 32px;
+    }
+
+    .deleteMessage {
+        color: green;
+        font-weight: 700;
+        font-style: italic;
+        font-size: 1.1rem;
+        text-align: center;
+    }
+}
+
+// Container for redirecting buttons
+.redirect-container {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    transition: 0.8s ease-in-out;
+
+    .btn-with-icon-and-text {
+        p {
+            padding-top: 0;
+        }
+    }
+}
+
+// ANIMATIONS
 // ==================================
 // make graph bar slide in from left to right (residual debt)
 @keyframes fillAnimation {

@@ -66,6 +66,38 @@ html {
             }
         }
 
+        .btn-with-icon-and-text {
+            padding: 15px 30px;
+            width: max-content;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            background-color: var(--midnight-violet);
+            color: var(--white-violet);
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            transition: 0.2s all;
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            &:active {
+                transform: scale(0.95);
+            }
+
+            img {
+                width: 24px;
+            }
+
+            p {
+                padding-top: 3px;
+            }
+        }
+
         .btn-colored {
             display: inline-block;
             padding: 20px;

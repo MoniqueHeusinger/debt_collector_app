@@ -251,9 +251,10 @@
     // Loading spinner
     // =======================
     .spinner {
-        display: none;
+        margin-top: 15%;
         width: 11.2px;
         height: 11.2px;
+        display: inline-block;
         animation: spinner-o824ag 1s infinite linear;
 
         div {
@@ -302,23 +303,34 @@
 
     // Loading message
     .loading-message {
-        display: none;
+        display: block;
         font-family: "RussoOne";
         color: var(--pale-midnight-violet);
         font-size: 1.1rem;
         text-align: center;
     }
+}
 
-    // show elements
-    // =======================
+// Container for success message: loan added
+// ===================================================
+.success-message-conatiner {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
 
-    .visible {
-        display: inline-block;
-        margin-top: 15%;
+    img {
+        width: 32px;
+        height: 32px;
     }
 
-    .visible-message {
-        display: block;
+    .deleteMessage {
+        color: green;
+        font-weight: 700;
+        font-style: italic;
+        font-size: 1.1rem;
+        text-align: center;
     }
 }
 
