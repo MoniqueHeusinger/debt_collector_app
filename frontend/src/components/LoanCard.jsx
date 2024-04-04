@@ -3,6 +3,7 @@ import pen from "../assets/img/icons/pen-primary-pale.png";
 import penDark from "../assets/img/icons/pen-primary.png";
 import trash from "../assets/img/icons/trash-primary-pale.png";
 import trashDark from "../assets/img/icons/trash-primary.png";
+import doneIcon from "../assets/img/icons/done.svg";
 import { Link } from "react-router-dom";
 import { backendURL } from "../api";
 
@@ -60,9 +61,12 @@ const LoanCard = ({ _id, amount, debtor, className }) => {
   return (
     <>
       {deleteMessage && (
-        <p className="deleteMessage" id="deleteMessage">
-          - {deleteMessage} -
-        </p>
+        <article className="delete-message-container">
+          <img src={doneIcon} alt="" />
+          <p className="deleteMessage" id="deleteMessage">
+            {deleteMessage}
+          </p>
+        </article>
       )}
 
       <article className={"loan-card " + className}>
