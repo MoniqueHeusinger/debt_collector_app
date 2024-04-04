@@ -42,6 +42,7 @@
                     transform-origin: left;
                     transition: transform 0.4s ease-out;
                 }
+
                 &:hover::after {
                     transform: scaleX(1);
                     transform-origin: left;
@@ -70,20 +71,11 @@
             background-color: white;
             box-shadow: 4px 7px 16px -4px rgba(112, 112, 112, 1);
             transition: 0.3s;
+            @include mixinLib.coloredBorderBottom($bcolor: var(--light-violet));
+
 
             &:hover {
                 transform: scale(1.06);
-                // cursor: pointer;
-            }
-
-            &:nth-child(2) {
-                @include mixinLib.coloredBorderBottom();
-            }
-            &:nth-child(3) {
-                @include mixinLib.coloredBorderBottom($bcolor: var(--light-violet));
-            }
-            &:nth-child(1) {
-                @include mixinLib.coloredBorderBottom($bcolor: var(--dark-violet));
             }
 
             h3 {
@@ -165,6 +157,7 @@
                     h3 {
                         color: var(--pale-midnight-violet);
                     }
+
                     p:nth-of-type(2) {
                         font-family: "RussoOne";
                         font-size: 1.3rem;
@@ -194,10 +187,11 @@
             transition: 0.3s;
 
             &:hover {
-                // background-color: var(--light-violet);
-                // color: var(--midnight-violet);
-                background-color: transparent;
-                color: var(--midnight-violet);
+                cursor: pointer;
+            }
+
+            &:active {
+                transform: scale(0.95);
             }
         }
     }

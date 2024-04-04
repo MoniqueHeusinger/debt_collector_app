@@ -218,12 +218,8 @@
 // Button
 // =======================
 .submit {
-    // display: flex;
-    // justify-content: right;
-    margin: 0px 1.5rem 24px 1.5rem;
+    margin: 1.5rem 1.5rem 24px 1.5rem;
     display: inline-block;
-    justify-items: right;
-
     padding: 10px 40px;
     background-color: var(--midnight-violet);
     color: var(--white-violet);
@@ -234,8 +230,11 @@
     transition: 0.3s;
 
     &:hover {
-        background-color: transparent;
-        color: var(--midnight-violet);
+        cursor: pointer;
+    }
+
+    &:active {
+        transform: scale(0.95);
     }
 }
 
