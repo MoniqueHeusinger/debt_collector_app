@@ -5,18 +5,25 @@ Welcome to "family.business" - a debt collector app for the young, aspiring Just
 He wants to use the app to:
 
 - get an overview of the loans currently granted 🏦
-- quickly identify which debtors are in arrears with their payments 🧑‍🦱 --> ⛓️🧱⚓️ --> 🌊🐟 --> 💵
-- create new loans (and debtors) 🙆💸
+- create new loans 🙆💸
 - edit or delete loans ✏️
 - keep an eye on family assets (more, more, more...) 💰💰💰
 
 🚧🚧🚧🚧 The app is currently still under construction... 🚧🚧🚧🚧
 
-If you would like to have a little insight now, you can find some screenshots down below.
+💻 click on the link to view the deployed page: [family.business](https://debt-collector-app.onrender.com/)
+
 
 ---
 
 This project was created as part of a coding bootcamp (fullstack development) at SuperCode GmbH.
+
+## What's next? ⚗️
+New Features will soon be implemented, such as:
+- quickly identify which debtors are in arrears with their payments 🧑‍🦱 --> ⛓️🧱⚓️ --> 🌊🐟 --> 💵
+<br>
+...and sending "the boys" to check in with non-paying debtors 🫵
+
 
 ## Screenshots 📸
 
